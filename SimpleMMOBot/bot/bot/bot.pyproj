@@ -21,6 +21,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Constants\FilePaths.py" />
+    <Compile Include="Constants\WebsitePaths.py" />
     <Compile Include="main.py" />
     <Compile Include="Bot\ActionController.py" />
     <Compile Include="Bot\Bot.py" />
@@ -34,6 +36,8 @@
     <Compile Include="Handlers\Logger.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Constants\" />
+    <Folder Include="Constants\__pycache__\" />
     <Folder Include="Discord\" />
     <Folder Include="Files\" />
     <Folder Include="Files\Discord\" />
@@ -43,6 +47,8 @@
     <Folder Include="Bot\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Constants\__pycache__\FilePaths.cpython-311.pyc" />
+    <Content Include="Constants\__pycache__\WebsitePaths.cpython-311.pyc" />
     <Content Include="Files\Discord\shared_variable.txt" />
     <Content Include="Files\Discord\status.txt" />
     <Content Include="Files\Logger\logs.txt" />

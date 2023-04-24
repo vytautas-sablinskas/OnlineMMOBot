@@ -1,7 +1,31 @@
-import FileHandler
+from Handlers.FileHandler import FileHandler
+from Constants.FilePaths import FilePaths
+from Constants.WebsitePaths import WebsitePaths
+from selenium_profiles.webdriver import Chrome
+from selenium_profiles.profiles import profiles
+from selenium.webdriver import ChromeOptions
 
 class ChromeDriverHandler:
     def __init__(self):
-        self.file_handler = FileHandler()
+        self.driver = self.start_driver()
 
-    def start_driver():
+    def add_arguments(self, driver, arguments):
+        no_arguments_to_add = not arguments
+        if no_arguments_to_add:
+            return
+
+        arguments_flat = [arg for sublist in arguments for arg in sublist]
+        arguments_string = " ".join(arguments_flat)
+        print(arguments_string)
+        driver.options.add_argument(arguments_string)
+
+    def start_driver(self):
+        profile = profiles.Windows()
+        options = ChromeOptions()
+        driver = Chrome(profile, options=options, uc_driver=False)
+        chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS, delimiter='\n')
+        self.add_arguments(driver, chrome_driver_arguments)
+
+        driver = driver.start()
+        driver.get(WebsitePaths.LOGIN_PAGE.value)
+        return driver

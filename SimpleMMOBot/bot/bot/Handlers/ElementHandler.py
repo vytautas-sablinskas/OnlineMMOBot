@@ -1,7 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions as ex
 import time
-import Logger
+import Handlers.Logger
 
 class ElementHandler:
     def __init__(self, driver, log_file_path="../Files/logs.txt"):
@@ -13,7 +13,7 @@ class ElementHandler:
             element = self.driver.find_element(locator_type, expression_type)
             return element
         except ex.NoSuchElementException:
-            self.logger.log_warning("Element not found with locator type: {} and expression type: {}".format(locator_type, expression_type))
+            self.logger.log_error("Element not found with locator type: {} and expression type: {}".format(locator_type, expression_type))
             return None
 
     def wait_for_element(self, expected_condition, locator_type, expression_type):
@@ -27,7 +27,8 @@ class ElementHandler:
     def find_and_click_on_element(self, locator_type, expression_type):
         element = self.find_element(locator_type, expression_type)
         element_was_clicked = False
-        if element and element.is_enabled() and element.is_displayed():
+        element_was_found = element and element.is_enabled() and element.is_displayed()
+        if element_was_found:
             try:
                 element.click()
                 time.sleep(1)
