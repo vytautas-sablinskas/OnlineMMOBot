@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>407fbd51-6fd0-4059-a88c-249574bd6d27</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>bot.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,8 +21,31 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="bot.py" />
-    <Compile Include="discord_bot.py" />
+    <Compile Include="main.py" />
+    <Compile Include="Bot\ActionController.py" />
+    <Compile Include="Bot\Bot.py" />
+    <Compile Include="Bot\Initializer.py" />
+    <Compile Include="Handlers\ChromeDriverHandler.py" />
+    <Compile Include="Handlers\FileHandler.py" />
+    <Compile Include="Handlers\TextHandler.py" />
+    <Compile Include="Handlers\TimeHandler.py" />
+    <Compile Include="Discord\DiscordBot.py" />
+    <Compile Include="Handlers\ElementHandler.py" />
+    <Compile Include="Handlers\Logger.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Discord\" />
+    <Folder Include="Files\" />
+    <Folder Include="Files\Discord\" />
+    <Folder Include="Files\InitializingBot\" />
+    <Folder Include="Files\Logger\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Bot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Discord\shared_variable.txt" />
+    <Content Include="Files\Discord\status.txt" />
+    <Content Include="Files\Logger\logs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
