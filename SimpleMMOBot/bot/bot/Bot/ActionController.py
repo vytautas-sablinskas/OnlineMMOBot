@@ -2,7 +2,8 @@ from . import Initializer
 
 class ActionController:
     def __init__(self):
-        self.driver = Initializer.Initializer().driver
+        self.initializer = Initializer.Initializer()
 
     def login(self):
-        pass
+        print(self.initializer.user.email)
+        

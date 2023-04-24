@@ -3,7 +3,7 @@ from Handlers.TextHandler import TextHandler
 class FileHandler:
     @staticmethod
     def read_from_file_lines(file_path):
-        with open(file_path, 'r') as file:
+        with open(file_path.value, 'r') as file:
             lines = file.readlines()
             return lines
         
@@ -24,12 +24,6 @@ class FileHandler:
 
     def get_webdriver_arguments():
         pass
-
-    def get_credentials(self, file_path=r"../Files/credentials.txt"):
-        credential_lines = self.read_from_file_lines(file_path)
-        email, password = TextHandler.split_credentials(credential_lines)
-
-        return email, password
 
     def write_updated_status_into_file(self, text, file_path=r"../Files/status.txt"):
         current_datetime = self.time_handler.get_current_datetime()

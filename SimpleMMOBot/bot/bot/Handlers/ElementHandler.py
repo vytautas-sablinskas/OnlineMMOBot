@@ -1,7 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions as ex
 import time
-import Handlers.Logger
+from Handlers.Logger import Logger
 
 class ElementHandler:
     def __init__(self, driver, log_file_path="../Files/logs.txt"):

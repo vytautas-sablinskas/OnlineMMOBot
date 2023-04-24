@@ -4,6 +4,7 @@ from Constants.WebsitePaths import WebsitePaths
 from selenium_profiles.webdriver import Chrome
 from selenium_profiles.profiles import profiles
 from selenium.webdriver import ChromeOptions
+import os
 
 class ChromeDriverHandler:
     def __init__(self):
@@ -23,6 +24,8 @@ class ChromeDriverHandler:
         profile = profiles.Windows()
         options = ChromeOptions()
         driver = Chrome(profile, options=options, uc_driver=False)
+        current_directory = os.getcwd()
+        print("Current working directory:", current_directory)
         chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS, delimiter='\n')
         self.add_arguments(driver, chrome_driver_arguments)
 
