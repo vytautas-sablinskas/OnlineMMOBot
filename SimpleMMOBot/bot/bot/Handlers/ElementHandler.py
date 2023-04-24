@@ -4,9 +4,9 @@ import time
 from Handlers.Logger import Logger
 
 class ElementHandler:
-    def __init__(self, driver, log_file_path="../Files/logs.txt"):
+    def __init__(self, driver):
             self.driver = driver
-            self.logger = Logger(log_file_path)
+            self.logger = Logger()
 
     def find_element(self, locator_type, expression_type):
         try:
@@ -37,3 +37,11 @@ class ElementHandler:
                 self.logger.log_error("Failed to click on element with locator type: {} and expression type: {}. Error: {}".format(locator_type, expression_type, str(e)))
 
         return element_was_clicked
+    
+    def wait_for_element_and_send_input(self, expected_condition, locator_type, expression_type, text):
+        element = self.wait_for_element(expected_condition, locator_type, expression_type)
+        element_exists = element != None
+        if element_exists:
+            element.send_keys(text)
+
+        

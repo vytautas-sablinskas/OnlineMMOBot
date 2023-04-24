@@ -6,4 +6,3 @@ class Bot:
 
     def run(self):
         self.action_controller.login()
-        input("hello")

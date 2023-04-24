@@ -24,8 +24,3 @@ class FileHandler:
 
     def get_webdriver_arguments():
         pass
-
-    def write_updated_status_into_file(self, text, file_path=r"../Files/status.txt"):
-        current_datetime = self.time_handler.get_current_datetime()
-        status = f"Bot status: {text}, Last Updated: {current_datetime}"
-        self.write_into_file(file_path, status)
