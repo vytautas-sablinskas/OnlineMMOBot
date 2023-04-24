@@ -6,3 +6,4 @@ class Bot:
 
     def run(self):
         self.action_controller.login()
+        self.action_controller.take_action()

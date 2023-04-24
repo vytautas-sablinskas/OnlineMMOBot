@@ -34,3 +34,13 @@ class LoginFormHandler:
             locator_type=login_button_locator,
             expression_type=login_button_expression
         )
+
+
+    def wait_until_travel_page_is_loaded(self):
+        take_a_step_locator = By.XPATH
+        take_a_step_expression = Expressions.TAKE_STEP_BUTTON.value
+        self.element_handler.wait_for_element(
+            expected_condition=EC.element_to_be_clickable, 
+            locator_type=take_a_step_locator,
+            expression_type=take_a_step_expression
+        )
