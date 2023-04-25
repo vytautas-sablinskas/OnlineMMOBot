@@ -9,6 +9,6 @@ class TextHandler:
 
     @staticmethod
     def split_credentials(credentials):
-        email = credentials[0].strip()
-        password = credentials[1].strip()
-        return email, password
+        email_or_discord_webhook_url = credentials[0].strip()
+        password_or_discord_token = credentials[1].strip()
+        return email_or_discord_webhook_url, password_or_discord_token

@@ -1,53 +1,53 @@
-from . import Initializer
+import time
+from selenium.webdriver.common.by import By
+from .Initializer import Initializer
 from Constants.FilePaths import FilePaths
 from Constants.WebsitePaths import WebsitePaths
-from Constants.Expressions import Expressions
 from Handlers.TimeHandler import TimeHandler
 from Handlers.FileHandler import FileHandler
-from Handlers.ElementHandler import ElementHandler
-from Handlers.LoginFormHandler import LoginFormHandler
-from .ActionDecisionMaker import ActionDecisionMaker
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-import selenium.common.exceptions as ex
-import time
+from Constants.Messages import Messages
+from Constants.Expressions import Expressions
+from ActionManagers.LoginManager import LoginManager
+from ActionManagers.VerificationManager import VerificationManager
+from ActionManagers.StepManager import StepManager
+from ActionManagers.MobAttackManager import MobAttackManager
+from ActionManagers.FileManager import FileManager
+
 
 class ActionController:
     def __init__(self):
-        self.initializer = Initializer.Initializer()
-        self.element_handler = ElementHandler(self.initializer.driver)
-        self.login_form_handler = LoginFormHandler(self.element_handler, self.initializer.user)
-        self.action_decision_maker = ActionDecisionMaker(self.element_handler)
+        self.user = Initializer.initialize_user_class()
+        self.discord = Initializer.initialize_discord_class()
+        self.chrome_handler = Initializer.initialize_chrome_driver()
+        self.element_handler = Initializer.initialize_element_handler(
+            self.chrome_handler.driver)
+        self.action_decision_finder = Initializer.initialize_action_decision_finder(
+            self.element_handler)
 
-    def update_status(self, status_text, file_path=FilePaths.BOT_STATUS):
-        current_datetime = TimeHandler.get_current_datetime()
-        status = f"Bot status: {status_text}, Last Updated: {current_datetime}"
-        FileHandler.write_into_file(file_path, status)
-
-    def login(self):
-        self.update_status(status_text="Trying to login")
-        self.login_form_handler.input_email()
-        self.login_form_handler.input_password()
-        self.login_form_handler.click_login_button()
-        self.initializer.driver.get(WebsitePaths.TRAVEL_PAGE.value)
-        self.login_form_handler.wait_until_travel_page_is_loaded()
-        self.update_status(status_text="Logged in successfully")
-
-    def take_steps(self, take_step_button):
-        TimeHandler.sleep_for_random_time(0.1, 1.6)
-        if take_step_button.is_enabled():
-            self.update_status(status_text="Taking steps")
-            take_step_button.click()
-
-
-    def take_action(self):
+    def take_action_depending_on_current_screen(self):
+        logged_in = False
         user_wants_bot_to_run = True
         while user_wants_bot_to_run:
-            self.action_decision_maker.find_next_action()
-            next_action = self.action_decision_maker.next_action
-            element = self.action_decision_maker.element
-            if next_action == "Step":
-                self.take_steps(take_step_button=element)
-            if next_action == "None":
-                time.sleep(1)
+            self.action_decision_finder.find_next_action(logged_in=logged_in)
+            next_action = self.action_decision_finder.next_action
+            element = self.action_decision_finder.element
+
+            match next_action:
+                case "Login":
+                    LoginManager.login(chrome_handler=self.chrome_handler, element_handler=self.element_handler,
+                                       email=self.user.email, password=self.user.password)
+                    logged_in = True
+                case "AFK Verification":
+                    VerificationManager.inform_about_afk_verification(
+                        discord_model=self.discord)
+                case "Step":
+                    StepManager.take_steps(take_step_button=element)
+                case "Attack":
+                    MobAttackManager.attack_mob_until_dead(link_to_mob_attack_page=element,
+                                                           element_handler=self.element_handler,
+                                                           discord_model=self.discord)
+                case _:
+                    FileManager.update_status("No action was taken")
+                    print("No action was taken")
+
+            TimeHandler.sleep_for_random_time(0.1, 0.5)

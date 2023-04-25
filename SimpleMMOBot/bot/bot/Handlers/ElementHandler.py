@@ -8,6 +8,11 @@ class ElementHandler:
             self.driver = driver
             self.logger = Logger()
 
+    def go_to_page_by_clicking_element(element):
+        if element and element.is_enabled():
+            element.click()
+            time.sleep(1)
+
     def find_element(self, locator_type, expression_type):
         try:
             element = self.driver.find_element(locator_type, expression_type)
