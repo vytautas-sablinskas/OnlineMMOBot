@@ -11,6 +11,7 @@ from ActionManagers.LoginManager import LoginManager
 from ActionManagers.VerificationManager import VerificationManager
 from ActionManagers.StepManager import StepManager
 from ActionManagers.MobAttackManager import MobAttackManager
+from ActionManagers.MaterialGatheringManager import MaterialGatheringManager
 from ActionManagers.FileManager import FileManager
 
 
@@ -21,18 +22,19 @@ class ActionController:
         self.chrome_handler = Initializer.initialize_chrome_driver()
         self.element_handler = Initializer.initialize_element_handler(
             self.chrome_handler.driver)
-        self.action_decision_finder = Initializer.initialize_action_decision_finder(
+        self.action_decision_maker = Initializer.initialize_action_decision_maker(
             self.element_handler)
 
     def take_action_depending_on_current_screen(self):
         logged_in = False
         user_wants_bot_to_run = True
         while user_wants_bot_to_run:
-            self.action_decision_finder.find_next_action(logged_in=logged_in)
-            next_action = self.action_decision_finder.next_action
+            self.action_decision_maker.find_next_action(logged_in=logged_in)
+            next_action = self.action_decision_maker.next_action
             print(next_action)
-            element = self.action_decision_finder.element
+            element = self.action_decision_maker.element
 
+            TimeHandler.sleep_for_random_time(0.3, 0.6)
             match next_action:
                 case "Login":
                     LoginManager.login(chrome_handler=self.chrome_handler, element_handler=self.element_handler,
@@ -48,5 +50,6 @@ class ActionController:
                                                            chrome_handler=self.chrome_handler,
                                                            element_handler=self.element_handler,
                                                            discord_model=self.discord)
-                case _:
-                    TimeHandler.sleep_for_random_time(0.1, 0.5)
+                case "Gather Materials":
+                    MaterialGatheringManager.gather_materials(
+                        element_handler=self.element_handler, action=self.action_decision_maker.gathering_action, link_to_material_gathering_page=element, discord_model=self.discord)

@@ -12,6 +12,8 @@ class Expressions(Enum):
     ATTACK_MOB_PAGE_LINK = "Attack"
     ATTACK_MOB_BUTTON = "//button[contains(text(), 'Attack')]"
     BATTLE_HAS_ENDED = "End Battle"
+    LINK_TO_GATHERING_PAGE = "//button[contains(text(), '{}')]"
     GATHER_BUTTON = "crafting_button"
+    GATHERING_LEVEL_TOO_LOW = "//small[contains(text(), \"Your skill level isn't high enough\")]"
     
 
