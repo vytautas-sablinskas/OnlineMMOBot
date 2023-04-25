@@ -38,18 +38,24 @@ class ActionController:
             match next_action:
                 case "Login":
                     LoginManager.login(chrome_handler=self.chrome_handler, element_handler=self.element_handler,
-                                       email=self.user.email, password=self.user.password)
+                                       email=self.user.email, password=self.user.password
+                    )
                     logged_in = True
                 case "AFK Verification":
                     VerificationManager.inform_about_afk_verification(
-                        discord_model=self.discord)
+                        discord_model=self.discord
+                    )
                 case "Step":
                     StepManager.take_steps(take_step_button=element)
                 case "Attack Mob":
                     MobAttackManager.attack_mob_until_dead(link_to_mob_attack_page=element,
                                                            chrome_handler=self.chrome_handler,
                                                            element_handler=self.element_handler,
-                                                           discord_model=self.discord)
+                                                           discord_model=self.discord
+                    )
                 case "Gather Materials":
                     MaterialGatheringManager.gather_materials(
-                        element_handler=self.element_handler, action=self.action_decision_maker.gathering_action, link_to_material_gathering_page=element, discord_model=self.discord)
+                        chrome_handler=self.chrome_handler, element_handler=self.element_handler, 
+                        action=self.action_decision_maker.gathering_action, 
+                        link_to_material_gathering_page=element, discord_model=self.discord
+                    )
