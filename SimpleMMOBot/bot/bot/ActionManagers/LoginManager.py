@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from Constants.Expressions import Expressions
 
-
 class LoginManager:
     def input_email(element_handler, email):
         email_input_locator = By.NAME

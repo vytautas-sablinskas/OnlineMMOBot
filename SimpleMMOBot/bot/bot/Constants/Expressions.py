@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class Expressions(Enum):
     EMAIL_INPUT = "email"
     PASSWORD_INPUT = "password"

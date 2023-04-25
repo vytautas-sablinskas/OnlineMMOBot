@@ -1,19 +1,10 @@
-import time
-from selenium.webdriver.common.by import By
 from .Initializer import Initializer
-from Constants.FilePaths import FilePaths
-from Constants.WebsitePaths import WebsitePaths
 from Handlers.TimeHandler import TimeHandler
-from Handlers.FileHandler import FileHandler
-from Constants.Messages import Messages
-from Constants.Expressions import Expressions
 from ActionManagers.LoginManager import LoginManager
 from ActionManagers.VerificationManager import VerificationManager
 from ActionManagers.StepManager import StepManager
 from ActionManagers.MobAttackManager import MobAttackManager
 from ActionManagers.MaterialGatheringManager import MaterialGatheringManager
-from ActionManagers.FileManager import FileManager
-
 
 class ActionController:
     def __init__(self):

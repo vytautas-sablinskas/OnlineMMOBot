@@ -3,7 +3,6 @@ import sys
 from Handlers.FileHandler import FileHandler
 from Constants.FilePaths import FilePaths
 
-
 def get_response(message: str):
     user_message = message.lower()
 

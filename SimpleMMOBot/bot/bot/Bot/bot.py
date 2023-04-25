@@ -1,5 +1,4 @@
 import subprocess
-import os
 from Bot.ActionController import ActionController
 from Constants.FilePaths import FilePaths
 

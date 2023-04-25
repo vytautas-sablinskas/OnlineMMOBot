@@ -4,7 +4,6 @@ from Constants.WebsitePaths import WebsitePaths
 from selenium_profiles.webdriver import Chrome
 from selenium_profiles.profiles import profiles
 from selenium.webdriver import ChromeOptions
-import time
 
 class ChromeDriverHandler:
     def __init__(self):
