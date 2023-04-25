@@ -1,21 +1,28 @@
 import discord
+import sys
+from Handlers.FileHandler import FileHandler
+from Constants.FilePaths import FilePaths
+
 
 def get_response(message: str):
     user_message = message.lower()
+
+    if user_message == 'help':
+        return "!continue - Continues bot from pause\n!action - Shows current bot action and start time"
+
     if user_message == 'continue':
-        with open('shared_variable.txt', 'w') as f:
-            f.seek(0)
-            f.truncate()
-            f.write("continue")
-            
+        FileHandler.write_into_file(
+            file_path=FilePaths.BOT_STATUS.value, 
+            data="continue"
+        )
         return "Script was unpaused! Make sure to have verified AFK check"
 
-    if user_message == 'status':
-        with open('status.txt', 'r') as f:
-            status_message = f.read()
-            return status_message
+    if user_message == 'action':
+        current_action_message = FileHandler.read_from_file_lines(FilePaths.CURRENT_BOT_ACTION.value)
+        return current_action_message
 
     return "There's no such command"
+
 
 async def send_message(message, user_message):
     try:
@@ -24,11 +31,15 @@ async def send_message(message, user_message):
     except Exception as e:
         print(e)
 
-def run_discord_bot():
-    TOKEN = 'MTA5ODE4MDIxMjA3Nzg5NTY5Mw.G72ldH.Vx9B9yGBRi0NyNmpB_Zpmd6CwZmdB8jrZTKzo8'
+
+def get_client():
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
+    return client
+
+def run_discord_bot(token):
+    client = get_client()
 
     @client.event
     async def on_ready():
@@ -38,11 +49,13 @@ def run_discord_bot():
     async def on_message(message):
         if message.author == client.user:
             return
-        
+
         user_message = str(message.content)
         if user_message[0] == "!":
             await send_message(message, user_message[1:])
 
-    client.run(TOKEN)
+    client.run(token)
 
-run_discord_bot()
+if __name__ == "__main__":
+    token = sys.argv[1]
+    run_discord_bot(token)

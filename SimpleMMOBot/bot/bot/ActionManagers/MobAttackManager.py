@@ -12,7 +12,7 @@ class MobAttackManager:
         element_handler.go_to_page_by_clicking_element(link_to_mob_attack_page)
         mob_is_alive = True
         while mob_is_alive:
-            FileManager.update_status("Attacking mob")
+            FileManager.update_bot_current_action("Attacking mob")
             MobAttackManager.click_attack_mob(element_handler)
 
             VerificationManager.check_for_afk_verification(

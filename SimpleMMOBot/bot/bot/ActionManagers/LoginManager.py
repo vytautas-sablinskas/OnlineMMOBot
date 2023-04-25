@@ -42,9 +42,9 @@ class LoginManager:
         chrome_handler.go_to_page(WebsitePaths.TRAVEL_PAGE.value, element_handler, take_a_step_condition, take_a_step_locator, take_a_step_expression)
 
     def login(chrome_handler, element_handler, email, password):
-        FileManager.update_status(status_text="Trying to login")
+        FileManager.update_bot_current_action(status_text="Trying to login")
         LoginManager.input_email(element_handler, email)
         LoginManager.input_password(element_handler, password)
         LoginManager.click_login_button(element_handler)
         LoginManager.wait_until_travel_page_is_loaded(element_handler, chrome_handler)
-        FileManager.update_status(status_text="Logged in successfully")
+        FileManager.update_bot_current_action(status_text="Logged in successfully")
