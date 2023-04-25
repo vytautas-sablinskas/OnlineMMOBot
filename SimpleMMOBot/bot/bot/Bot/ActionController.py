@@ -30,6 +30,7 @@ class ActionController:
         while user_wants_bot_to_run:
             self.action_decision_finder.find_next_action(logged_in=logged_in)
             next_action = self.action_decision_finder.next_action
+            print(next_action)
             element = self.action_decision_finder.element
 
             match next_action:
@@ -42,12 +43,10 @@ class ActionController:
                         discord_model=self.discord)
                 case "Step":
                     StepManager.take_steps(take_step_button=element)
-                case "Attack":
+                case "Attack Mob":
                     MobAttackManager.attack_mob_until_dead(link_to_mob_attack_page=element,
+                                                           chrome_handler=self.chrome_handler,
                                                            element_handler=self.element_handler,
                                                            discord_model=self.discord)
                 case _:
-                    FileManager.update_status("No action was taken")
-                    print("No action was taken")
-
-            TimeHandler.sleep_for_random_time(0.1, 0.5)
+                    TimeHandler.sleep_for_random_time(0.1, 0.5)

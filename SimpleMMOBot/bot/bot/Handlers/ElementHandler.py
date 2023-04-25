@@ -8,7 +8,7 @@ class ElementHandler:
             self.driver = driver
             self.logger = Logger()
 
-    def go_to_page_by_clicking_element(element):
+    def go_to_page_by_clicking_element(self, element):
         if element and element.is_enabled():
             element.click()
             time.sleep(1)
@@ -26,6 +26,7 @@ class ElementHandler:
             element = WebDriverWait(self.driver, 10).until(expected_condition((locator_type, expression_type)))
             return element
         except ex.TimeoutException:
+            print("Timed out")
             self.logger.log_info("Timeout while waiting for element with locator type: {} and expression type: {}".format(locator_type, expression_type))
             return None
 

@@ -35,20 +35,16 @@ class LoginManager:
         )
 
 
-    def wait_until_travel_page_is_loaded(element_handler):
+    def wait_until_travel_page_is_loaded(element_handler, chrome_handler):
         take_a_step_locator = By.XPATH
         take_a_step_expression = Expressions.TAKE_STEP_BUTTON.value
-        element_handler.wait_for_element(
-            expected_condition=EC.element_to_be_clickable, 
-            locator_type=take_a_step_locator,
-            expression_type=take_a_step_expression
-        )
+        take_a_step_condition = EC.visibility_of_any_elements_located
+        chrome_handler.go_to_page(WebsitePaths.TRAVEL_PAGE.value, element_handler, take_a_step_condition, take_a_step_locator, take_a_step_expression)
 
     def login(chrome_handler, element_handler, email, password):
         FileManager.update_status(status_text="Trying to login")
         LoginManager.input_email(element_handler, email)
         LoginManager.input_password(element_handler, password)
         LoginManager.click_login_button(element_handler)
-        chrome_handler.go_to_page(WebsitePaths.TRAVEL_PAGE.value)
-        LoginManager.wait_until_travel_page_is_loaded(element_handler)
+        LoginManager.wait_until_travel_page_is_loaded(element_handler, chrome_handler)
         FileManager.update_status(status_text="Logged in successfully")

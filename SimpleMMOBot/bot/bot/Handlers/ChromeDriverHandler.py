@@ -24,13 +24,13 @@ class ChromeDriverHandler:
         profile = profiles.Windows()
         options = ChromeOptions()
         driver = Chrome(profile, options=options, uc_driver=False)
-        chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS, delimiter='\n')
+        chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS.value, delimiter='\n')
         self.add_arguments(driver, chrome_driver_arguments)
 
         driver = driver.start()
         driver.get(WebsitePaths.LOGIN_PAGE.value)
         return driver
     
-    def go_to_page(self, location):
+    def go_to_page(self, location, element_handler, expected_condition, locator_type, expression_type):
         self.driver.get(location)
-        time.sleep(1)
+        element_handler.wait_for_element(expected_condition, locator_type, expression_type)

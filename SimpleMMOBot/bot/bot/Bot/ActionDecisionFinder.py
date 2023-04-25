@@ -12,7 +12,7 @@ class ActionDecisionFinder:
             self.next_action = "Login"
             return
 
-        afk_verification_element = self.element_handler.find_element(By.LINK_TEXT, Expressions.CONFIRM_EXISTENCE_BUTTON)
+        afk_verification_element = self.element_handler.find_element(By.LINK_TEXT, Expressions.CONFIRM_EXISTENCE_BUTTON.value)
         if afk_verification_element and afk_verification_element.is_enabled():
             self.element = afk_verification_element
             self.next_action = "AFK Verification"
@@ -29,4 +29,6 @@ class ActionDecisionFinder:
             self.element = take_step_element
             self.next_action = "Step"
             return
+        
+        self.element, self.next_action = None, "None"
         
