@@ -38,4 +38,7 @@ class VerificationManager:
         if verification_link_popped_up:
             FileManager.update_bot_status(status_text="Paused")
             VerificationManager.inform_about_afk_verification(chrome_handler, discord_model)
+            return True
+        
+        return False
                 

@@ -14,11 +14,14 @@ class MaterialGatheringManager:
     def click_gather_button_until_close(chrome_handler, element_handler, discord_model):
         materials_can_be_gathered = True
         while materials_can_be_gathered:
-            VerificationManager.check_for_afk_verification(
+            verification_popped = VerificationManager.check_for_afk_verification(
                 chrome_handler,
                 element_handler, 
                 discord_model
             )
+
+            if verification_popped:
+                return
 
             gather_button = element_handler.find_element(
                 By.ID, Expressions.GATHER_BUTTON.value

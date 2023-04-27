@@ -18,7 +18,6 @@ class ElementHandler:
             element = self.driver.find_element(locator_type, expression_type)
             return element
         except ex.NoSuchElementException:
-            self.logger.log_info("Element not found with locator type: {} and expression type: {}".format(locator_type, expression_type))
             return None
 
     def wait_for_element(self, expected_condition, locator_type, expression_type):
@@ -27,7 +26,6 @@ class ElementHandler:
             return element
         except ex.TimeoutException:
             print("Timed out")
-            self.logger.log_info("Timeout while waiting for element with locator type: {} and expression type: {}".format(locator_type, expression_type))
             return None
 
     def find_and_click_on_element(self, locator_type, expression_type):
@@ -39,9 +37,8 @@ class ElementHandler:
                 element.click()
                 time.sleep(1)
                 element_was_clicked = True
-            except Exception as e:
-                self.logger.log_info("Failed to click on element with locator type: {} and expression type: {}. Error: {}".format(locator_type, expression_type, str(e)))
-
+            except:
+                pass
         return element_was_clicked
     
     def wait_for_element_and_send_input(self, expected_condition, locator_type, expression_type, text):

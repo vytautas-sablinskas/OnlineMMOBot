@@ -15,11 +15,14 @@ class MobAttackManager:
             FileManager.update_bot_current_action("Attacking mob")
             MobAttackManager.click_attack_mob(element_handler)
 
-            VerificationManager.check_for_afk_verification(
+            verification_popped = VerificationManager.check_for_afk_verification(
                 chrome_handler,
                 element_handler, 
                 discord_model
             )
+
+            if verification_popped:
+                return
 
             battle_has_ended = MobAttackManager.check_for_battle_end_element(element_handler)
             if battle_has_ended:
