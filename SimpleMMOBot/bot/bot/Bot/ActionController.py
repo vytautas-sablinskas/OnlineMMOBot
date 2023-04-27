@@ -15,21 +15,20 @@ class ActionController:
             self.chrome_handler.driver)
         self.action_decision_maker = Initializer.initialize_action_decision_maker(
             self.element_handler)
+        self.logged_in = False
+        self.finished_afk_check = False
 
-    def take_action_depending_on_current_screen(self):
-        logged_in = False
-        finished_afk_check = False
-        user_wants_bot_to_run = True
-        while user_wants_bot_to_run:
-            self.action_decision_maker.find_next_action(logged_in=logged_in)
-            next_action = self.action_decision_maker.next_action
-            if next_action != "None":
+    def get_next_action_and_element(self):
+        self.action_decision_maker.find_next_action(logged_in=self.logged_in, finished_afk_check=self.finished_afk_check)  
+        element = self.action_decision_maker.element
+        next_action = self.action_decision_maker.next_action
+        if next_action != "None":
                 print(next_action)
-            element = self.action_decision_maker.element
+        
+        return next_action, element
 
+    def execute_next_action(self, next_action, element):
             TimeHandler.sleep_for_random_time(0.3, 0.6)
-            next_action = "Step" if finished_afk_check else next_action
-            finished_afk_check = False
             match next_action:
                 case "Login":
                     LoginManager.login(chrome_handler=self.chrome_handler, 
@@ -37,12 +36,15 @@ class ActionController:
                                        email=self.user.email, 
                                        password=self.user.password
                     )
-                    logged_in = True
+                    self.logged_in = True
                 case "AFK Verification":
+                    if self.finished_afk_check == True:
+                         return
+                    
                     VerificationManager.inform_about_afk_verification(
                         discord_model=self.discord
                     )
-                    finished_afk_check = True
+                    self.finished_afk_check = True
                 case "Step":
                     StepManager.take_steps(take_step_button=element)
                 case "Attack Mob":
@@ -59,3 +61,9 @@ class ActionController:
                         link_to_material_gathering_page=element, 
                         discord_model=self.discord
                     )
+
+    def take_action_depending_on_current_screen(self):
+        user_wants_bot_to_run = True
+        while user_wants_bot_to_run:
+            next_action, element = self.get_next_action_and_element()
+            self.execute_next_action(next_action, element)
