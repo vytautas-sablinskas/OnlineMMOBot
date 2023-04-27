@@ -8,7 +8,7 @@ from ActionManagers.FileManager import FileManager
 
 class MobAttackManager:
     @staticmethod
-    def attack_mob_until_dead(link_to_mob_attack_page, chrome_handler, element_handler, discord_model, current_action):
+    def attack_mob_until_dead(link_to_mob_attack_page, chrome_handler, element_handler, discord_model):
         element_handler.go_to_page_by_clicking_element(link_to_mob_attack_page)
         mob_is_alive = True
         while mob_is_alive:
@@ -18,8 +18,7 @@ class MobAttackManager:
             VerificationManager.check_for_afk_verification(
                 chrome_handler,
                 element_handler, 
-                discord_model, 
-                current_action
+                discord_model
             )
 
             battle_has_ended = MobAttackManager.check_for_battle_end_element(element_handler)

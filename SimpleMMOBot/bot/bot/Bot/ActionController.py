@@ -47,6 +47,7 @@ class ActionController:
                     self.logged_in = True
                 case "AFK Verification":
                     VerificationManager.inform_about_afk_verification(
+                        chrome_handler=self.chrome_handler,
                         discord_model=self.discord
                     )
                 case "Step":
@@ -56,8 +57,7 @@ class ActionController:
                     MobAttackManager.attack_mob_until_dead(link_to_mob_attack_page=element,
                                                            chrome_handler=self.chrome_handler,
                                                            element_handler=self.element_handler,
-                                                           discord_model=self.discord,
-                                                           current_action=next_action
+                                                           discord_model=self.discord
                     )
                     self.action_counter["Mob Attacks"] += 1
                 case "Gather Materials":
@@ -66,8 +66,7 @@ class ActionController:
                         element_handler=self.element_handler, 
                         action=self.action_decision_maker.gathering_action, 
                         link_to_material_gathering_page=element, 
-                        discord_model=self.discord,
-                        current_action=next_action
+                        discord_model=self.discord
                     )
                     self.action_counter[f"Gather Materials - {self.action_decision_maker.gathering_action}"] += 1
 

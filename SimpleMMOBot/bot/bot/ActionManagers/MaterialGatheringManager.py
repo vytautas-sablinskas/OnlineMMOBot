@@ -11,14 +11,13 @@ class MaterialGatheringManager:
         gathering_actions = ["Grab", "Salvage", "Catch", "Chop", "Mine"]
         return gathering_actions
 
-    def click_gather_button_until_close(chrome_handler, element_handler, discord_model, current_action):
+    def click_gather_button_until_close(chrome_handler, element_handler, discord_model):
         materials_can_be_gathered = True
         while materials_can_be_gathered:
             VerificationManager.check_for_afk_verification(
                 chrome_handler,
                 element_handler, 
-                discord_model,
-                current_action
+                discord_model
             )
 
             gather_button = element_handler.find_element(
@@ -35,11 +34,10 @@ class MaterialGatheringManager:
                 gather_button.click()
                 TimeHandler.sleep_for_random_time(0.5, 0.7)
 
-    def gather_materials(chrome_handler, element_handler, action, link_to_material_gathering_page, discord_model, current_action):
+    def gather_materials(chrome_handler, element_handler, action, link_to_material_gathering_page, discord_model):
         FileManager.update_bot_current_action(status_text=f"Gathering materials, Action: {action}")
         element_handler.go_to_page_by_clicking_element(link_to_material_gathering_page)
         MaterialGatheringManager.click_gather_button_until_close(chrome_handler, 
                                                                  element_handler, 
-                                                                 discord_model,
-                                                                 current_action
+                                                                 discord_model
         )
