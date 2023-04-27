@@ -1,7 +1,11 @@
 import discord
 import sys
+import time
 from Handlers.FileHandler import FileHandler
 from Constants.FilePaths import FilePaths
+
+last_message_time = 0
+cooldown_time = 5
 
 def get_response(message: str):
     user_message = message.lower()
@@ -25,8 +29,13 @@ def get_response(message: str):
 
 async def send_message(message, user_message):
     try:
+        global last_message_time
+        if time.time() - last_message_time < cooldown_time:
+            return
+
         response = get_response(user_message)
         await message.channel.send(response)
+        last_message_time = time.time()
     except Exception as e:
         print(e)
 

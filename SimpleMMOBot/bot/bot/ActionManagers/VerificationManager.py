@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 from Constants.Expressions import Expressions
+from Constants.WebsitePaths import WebsitePaths
 from Constants.Messages import Messages
 from Constants.FilePaths import FilePaths
 from Handlers.FileHandler import FileHandler
 from Handlers.TextHandler import TextHandler
 from ActionManagers.FileManager import FileManager
+import time
 
 
 class VerificationManager:
@@ -16,7 +18,6 @@ class VerificationManager:
             )
             bot_status = TextHandler.get_bot_status(user_response)
             if bot_status == "Continue":
-                FileManager.update_bot_status(status_text="Unpausing")
                 waiting_for_user_to_unpause = False
 
     @staticmethod
@@ -25,11 +26,15 @@ class VerificationManager:
         VerificationManager.pause_script_until_manually_continued()
 
     @staticmethod
-    def check_for_afk_verification(element_handler, discord_model):
+    def check_for_afk_verification(chrome_handler, element_handler, discord_model, action):
         verification_link_popped_up = element_handler.find_element(
             locator_type=By.LINK_TEXT,
             expression_type=Expressions.PRESS_VERIFY_BUTTON.value
         )
 
         if verification_link_popped_up:
+            FileManager.update_bot_status(status_text="Paused")
             VerificationManager.inform_about_afk_verification(discord_model)
+            if action != "Step":
+                chrome_handler.driver.get(WebsitePaths.TRAVEL_PAGE.value)
+                time.sleep(1)

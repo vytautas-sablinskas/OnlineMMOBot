@@ -7,6 +7,7 @@ class Expressions(Enum):
 
     PRESS_VERIFY_BUTTON = "Press here to verify"
     CONFIRM_EXISTENCE_BUTTON = "Press here to confirm your existence"
+    EXIT_VERIFY_POP_UP = '//button[@x-on:click="battle_end.status=false;"]'
     TAKE_STEP_BUTTON = "//button[contains(text(), 'Take a step')]"
     ATTACK_MOB_PAGE_LINK = "Attack"
     ATTACK_MOB_BUTTON = "//button[contains(text(), 'Attack')]"

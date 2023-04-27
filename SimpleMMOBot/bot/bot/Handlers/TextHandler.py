@@ -1,3 +1,5 @@
+from Handlers.TimeHandler import TimeHandler
+
 class TextHandler:
     @staticmethod
     def split_lines_to_array(lines, delimiter=' '):
@@ -19,3 +21,9 @@ class TextHandler:
             return "Continue"
         
         return "Pause"
+    
+    @staticmethod
+    def get_current_action_in_text(next_action):
+        max_width = len("Gather Materials")
+        current_datetime = TimeHandler.get_current_datetime()
+        return f"Action: {next_action.ljust(max_width)} | Time: {current_datetime}"

@@ -2,8 +2,8 @@ import logging
 from Constants.FilePaths import FilePaths
 
 class Logger:
-    def __init__(self):
-        logging.basicConfig(filename=FilePaths.LOGS.value, level=logging.DEBUG,
+    def __init__(self, file_name=FilePaths.LOGS.value):
+        logging.basicConfig(filename=file_name, level=logging.DEBUG,
                             format='%(asctime)s - %(levelname)s - %(message)s')
         self.logger = logging.getLogger()
 

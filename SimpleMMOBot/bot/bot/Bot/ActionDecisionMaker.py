@@ -21,21 +21,22 @@ class ActionDecisionMaker:
             self.next_action = "AFK Verification"
             return
         
-        gathering_actions = MaterialGatheringManager.get_gathering_actions()
-        for action in gathering_actions:
-
-            action_element = self.element_handler.find_element(By.XPATH, Expressions.LINK_TO_GATHERING_PAGE.value.format(action))
-            if action_element and action_element.is_enabled():
-                self.element = action_element
-                self.next_action = "Gather Materials"
-                self.gathering_action = action           
-                return
-
         attack_mob_element = self.element_handler.find_element(By.LINK_TEXT, Expressions.ATTACK_MOB_PAGE_LINK.value)
         if attack_mob_element and attack_mob_element.is_enabled():
             self.element = attack_mob_element
             self.next_action = "Attack Mob"
             return
+
+        gathering_level_too_low = self.element_handler.find_element(By.XPATH, Expressions.GATHERING_LEVEL_TOO_LOW.value)  
+        if not gathering_level_too_low:
+            gathering_actions = MaterialGatheringManager.get_gathering_actions()
+            for action in gathering_actions:
+                action_element = self.element_handler.find_element(By.XPATH, Expressions.LINK_TO_GATHERING_PAGE.value.format(action))
+                if action_element and action_element.is_enabled():
+                    self.element = action_element
+                    self.next_action = "Gather Materials"
+                    self.gathering_action = action           
+                    return
         
         take_step_element = self.element_handler.find_element(By.XPATH, Expressions.TAKE_STEP_BUTTON.value)
         if take_step_element and take_step_element.is_enabled():
