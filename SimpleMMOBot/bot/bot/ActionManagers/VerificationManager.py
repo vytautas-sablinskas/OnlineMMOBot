@@ -22,6 +22,7 @@ class VerificationManager:
 
     @staticmethod
     def inform_about_afk_verification(discord_model):
+        FileManager.update_bot_status(status_text="Paused")
         discord_model.send_message_to_discord_server(Messages.AFK_VERIFICATION.value)
         VerificationManager.pause_script_until_manually_continued()
 
@@ -35,6 +36,7 @@ class VerificationManager:
         if verification_link_popped_up:
             FileManager.update_bot_status(status_text="Paused")
             VerificationManager.inform_about_afk_verification(discord_model)
+
             if action != "Step":
                 chrome_handler.driver.get(WebsitePaths.TRAVEL_PAGE.value)
                 time.sleep(1)

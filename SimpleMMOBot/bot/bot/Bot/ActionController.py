@@ -7,6 +7,7 @@ from ActionManagers.VerificationManager import VerificationManager
 from ActionManagers.StepManager import StepManager
 from ActionManagers.MobAttackManager import MobAttackManager
 from ActionManagers.MaterialGatheringManager import MaterialGatheringManager
+from ActionManagers.FileManager import FileManager
 
 class ActionController:
     def __init__(self):
@@ -19,7 +20,6 @@ class ActionController:
             self.element_handler)
         self.logger = Initializer.initialize_logger()
         self.logged_in = False
-        self.finished_afk_check = False
         self.action_counter = {"Steps": 0,
                        "Mob Attacks": 0,
                        "Gather Materials - Grab": 0,
@@ -29,7 +29,7 @@ class ActionController:
                        "Gather Materials - Mine": 0}
 
     def find_next_action_and_element(self):
-        self.action_decision_maker.find_next_action(logged_in=self.logged_in, finished_afk_check=self.finished_afk_check)  
+        self.action_decision_maker.find_next_action(logged_in=self.logged_in)  
         if self.action_decision_maker.next_action != "None":
                 current_action_in_text = TextHandler.get_current_action_in_text(self.action_decision_maker.next_action)
                 print(current_action_in_text)
@@ -46,13 +46,9 @@ class ActionController:
                     )
                     self.logged_in = True
                 case "AFK Verification":
-                    if self.finished_afk_check == True:
-                         return
-                    
                     VerificationManager.inform_about_afk_verification(
                         discord_model=self.discord
                     )
-                    self.finished_afk_check = True
                 case "Step":
                     StepManager.take_steps(take_step_button=element)
                     self.action_counter["Steps"] += 1

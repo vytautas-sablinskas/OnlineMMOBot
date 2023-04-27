@@ -10,13 +10,13 @@ class ActionDecisionMaker:
         self.next_action = "None"
         self.gathering_action = "None"
 
-    def find_next_action(self, logged_in, finished_afk_check):
+    def find_next_action(self, logged_in):
         if not logged_in:
             self.next_action = "Login"
             return
 
         afk_verification_element = self.element_handler.find_element(By.LINK_TEXT, Expressions.CONFIRM_EXISTENCE_BUTTON.value)
-        if not finished_afk_check and afk_verification_element and afk_verification_element.is_enabled():
+        if afk_verification_element and afk_verification_element.is_enabled():
             self.element = afk_verification_element
             self.next_action = "AFK Verification"
             return
@@ -35,14 +35,13 @@ class ActionDecisionMaker:
                 if action_element and action_element.is_enabled():
                     self.element = action_element
                     self.next_action = "Gather Materials"
-                    self.gathering_action = action           
-                    return
+                    self.gathering_action = action    
+                    return       
         
         take_step_element = self.element_handler.find_element(By.XPATH, Expressions.TAKE_STEP_BUTTON.value)
         if take_step_element and take_step_element.is_enabled():
             self.element = take_step_element
             self.next_action = "Step"
-            finished_afk_check = False
             return
         
         self.element, self.next_action, self.gathering_action = None, "None", "None"
