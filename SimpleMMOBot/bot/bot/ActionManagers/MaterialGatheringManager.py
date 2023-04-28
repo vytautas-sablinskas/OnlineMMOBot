@@ -19,7 +19,6 @@ class MaterialGatheringManager:
                 element_handler, 
                 discord_model
             )
-
             if verification_popped:
                 return
 
@@ -35,7 +34,7 @@ class MaterialGatheringManager:
                 materials_can_be_gathered = False
             else:
                 gather_button.click()
-                TimeHandler.sleep_for_random_time(0.5, 0.7)
+                TimeHandler.sleep_for_random_time(1, 1.2)
 
     def gather_materials(chrome_handler, element_handler, action, link_to_material_gathering_page, discord_model):
         FileManager.update_bot_current_action(status_text=f"Gathering materials, Action: {action}")
