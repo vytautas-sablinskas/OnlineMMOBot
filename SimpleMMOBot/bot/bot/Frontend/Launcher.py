@@ -2,6 +2,7 @@ import sys
 import os
 backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Backend'))
 sys.path.append(backend_dir)
+
 from Handlers.DependencyHandler import DependencyHandler
 
 def lauch_bot_panel():
