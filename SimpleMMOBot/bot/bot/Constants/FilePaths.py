@@ -2,6 +2,7 @@ import os
 from enum import Enum
 
 class FilePaths(Enum):
+    IMPORT_REQUIREMENTS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Files/InitializingBot/import_requirements.txt')
     DISCORD_BOT = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/DiscordBot.py')
     CREDENTIALS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Files/InitializingBot/credentials.txt')
     CHROME_ARGUMENTS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Files/InitializingBot/arguments.txt') 

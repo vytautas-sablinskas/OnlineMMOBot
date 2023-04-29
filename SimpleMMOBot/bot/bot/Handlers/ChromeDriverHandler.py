@@ -14,10 +14,8 @@ class ChromeDriverHandler:
         if no_arguments_to_add:
             return
 
-        arguments_flat = [arg for sublist in arguments for arg in sublist]
-        arguments_string = " ".join(arguments_flat)
-        print(arguments_string)
-        driver.options.add_argument(arguments_string)
+        for argument in arguments:
+            driver.options.add_argument(argument)
 
     def start_driver(self):
         profile = profiles.Windows()

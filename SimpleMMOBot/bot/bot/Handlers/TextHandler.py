@@ -2,12 +2,14 @@ from Handlers.TimeHandler import TimeHandler
 
 class TextHandler:
     @staticmethod
-    def split_lines_to_array(lines, delimiter=' '):
-        split_lines = []
+    def split_lines_to_array(lines, delimiter):
+        array = []
         for line in lines:
-            split_line = line.split(delimiter)
-            split_lines.append(split_line)
-        return split_lines
+            line = line.strip()
+            if line:
+                split_line = line.split(delimiter)
+                array.extend(split_line)
+        return array
 
     @staticmethod
     def split_credentials(credentials):

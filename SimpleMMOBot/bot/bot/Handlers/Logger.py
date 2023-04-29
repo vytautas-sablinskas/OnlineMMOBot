@@ -4,7 +4,7 @@ from Constants.FilePaths import FilePaths
 class Logger:
     def __init__(self, file_name=FilePaths.LOGS.value):
         logging.basicConfig(filename=file_name, level=logging.DEBUG,
-                            format='%(asctime)s - %(levelname)s - %(message)s')
+                            format='%(message)s')
         self.logger = logging.getLogger()
 
     def log_info(self, message):
