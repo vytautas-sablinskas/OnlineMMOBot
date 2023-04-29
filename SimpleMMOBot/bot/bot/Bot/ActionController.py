@@ -1,13 +1,11 @@
 from .Initializer import Initializer
 from Handlers.TimeHandler import TimeHandler
 from Handlers.TextHandler import TextHandler
-from Handlers.Logger import Logger
-from ActionManagers.LoginManager import LoginManager
-from ActionManagers.VerificationManager import VerificationManager
-from ActionManagers.StepManager import StepManager
-from ActionManagers.MobAttackManager import MobAttackManager
-from ActionManagers.MaterialGatheringManager import MaterialGatheringManager
-from ActionManagers.FileManager import FileManager
+from Managers.Navigation.LoginManager import LoginManager
+from Managers.Actions.VerificationManager import VerificationManager
+from Managers.Actions.StepManager import StepManager
+from Managers.Actions.MobAttackManager import MobAttackManager
+from Managers.Actions.MaterialGatheringManager import MaterialGatheringManager
 
 class ActionController:
     def __init__(self):

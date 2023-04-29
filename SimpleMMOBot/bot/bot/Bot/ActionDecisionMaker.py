@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from Constants.Expressions import Expressions
-from ActionManagers.MaterialGatheringManager import MaterialGatheringManager
-
+from Managers.Actions.MaterialGatheringManager import MaterialGatheringManager
 
 class ActionDecisionMaker:
     def __init__(self, element_handler):
