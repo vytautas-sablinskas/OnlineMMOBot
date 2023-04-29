@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./SimpleMMOBot/bot/bot/Backend",
+        "./SimpleMMOBot/bot/bot"
+    ]
+}

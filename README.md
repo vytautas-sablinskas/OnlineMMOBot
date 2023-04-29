@@ -1,1 +1,1 @@
-# mmo-automation
+# SimpleMMO Automation
