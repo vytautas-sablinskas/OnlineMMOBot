@@ -11,3 +11,4 @@ class FilePaths(Enum):
     CURRENT_BOT_ACTION = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Discord/current_action.txt')
     FILE_HANDLER = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Handlers/FileHandler.py')
     ACTION_TRACKING_LOGS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/action_tracking_logs.txt')
+    BOT_START = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/main.py')

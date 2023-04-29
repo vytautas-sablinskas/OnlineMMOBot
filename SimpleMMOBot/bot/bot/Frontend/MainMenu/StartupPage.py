@@ -4,9 +4,13 @@ backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '...', 'Ba
 sys.path.append(backend_dir)
 
 import streamlit as st
+import psutil
+import subprocess
 from Handlers.FileHandler import FileHandler
 from Managers.Files.FileManager import FileManager
 from Constants.FilePaths import FilePaths
+
+process = None
 
 def get_user_credential_input_fields():
     email, password =  FileManager.get_user_or_discord_credentials(FilePaths.CREDENTIALS.value)
@@ -28,17 +32,39 @@ def run_bot(email, password, discord_webhook_url, discord_token):
     FileHandler.write_into_file(file_path=FilePaths.DISCORD_CREDENTIALS.value,
                                 data=f"{discord_webhook_url}\n{discord_token}"
     )
+    
+    process = subprocess.Popen(["python", FilePaths.BOT_START.value])
     st.success("Bot successfully started")
+    return process
+
+def stop_bot(process):
+    if process is None:
+        st.error("Bot hasn't started yet!")
+        return
+    
+    parent = psutil.Process(process.pid)
+    children = parent.children(recursive=True)
+    for child in children:
+        child.kill()
+    parent.kill()
+    print("Bot successfully stopped!")
+    st.success("Bot successfully stopped!")
 
 def show_page():
+    global process
+
     st.header('Welcome to SimpleMMO Bot')
     st.write('Enter information and settings')
     
     email_input_box, password_input_box = get_user_credential_input_fields()
     discord_webhook_url_box, discord_token_box = get_discord_credential_input_fields()
 
-    run_button = st.button(label="Start bot")
+    start_button_place, stop_button_place = st.columns(spec=2, gap="small")
+    run_button = start_button_place.button(label="Start bot")
+    stop_button = stop_button_place.button(label="Stop bot")
 
     if run_button:
-        run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box)
+        process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box)
     
+    if stop_button:
+        stop_bot(process)

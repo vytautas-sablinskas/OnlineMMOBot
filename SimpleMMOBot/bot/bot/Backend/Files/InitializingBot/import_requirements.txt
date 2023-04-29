@@ -2,3 +2,6 @@ selenium
 selenium-profiles
 discord-webhook
 discord
+psutil
+streamlit
+streamlit_option_menu
