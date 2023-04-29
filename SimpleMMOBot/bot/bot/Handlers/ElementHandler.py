@@ -1,12 +1,9 @@
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions as ex
 import time
-from Handlers.Logger import Logger
-
 class ElementHandler:
     def __init__(self, driver):
             self.driver = driver
-            self.logger = Logger()
 
     def go_to_page_by_clicking_element(self, element):
         if element and element.is_enabled():

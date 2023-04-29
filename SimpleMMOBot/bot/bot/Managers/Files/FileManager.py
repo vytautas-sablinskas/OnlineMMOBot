@@ -10,3 +10,9 @@ class FileManager:
 
     def update_bot_status(status_text, file_path=FilePaths.BOT_STATUS.value):
         FileHandler.write_into_file(file_path, status_text)
+
+    def log_text(file_path, message):
+        FileHandler.write_into_file(file_path=file_path,
+                                    data=message,
+                                    append=True
+        )

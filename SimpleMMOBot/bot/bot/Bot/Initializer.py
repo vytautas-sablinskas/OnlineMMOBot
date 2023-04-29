@@ -1,7 +1,6 @@
 from Handlers.ChromeDriverHandler import ChromeDriverHandler
 from Handlers.FileHandler import FileHandler
 from Handlers.TextHandler import TextHandler
-from Handlers.Logger import Logger
 from Handlers.ElementHandler import ElementHandler
 from Bot.ActionDecisionMaker import ActionDecisionMaker
 from Models.User import User
@@ -29,6 +28,3 @@ class Initializer:
         webhook_url, token = TextHandler.split_credentials(credential_lines)
         discord = Discord(token, webhook_url)
         return discord
-    
-    def initialize_logger(file_path=FilePaths.ACTION_TRACKING_LOGS.value):
-        return Logger(file_name=file_path)

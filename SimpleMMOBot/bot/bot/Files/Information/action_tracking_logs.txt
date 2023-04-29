@@ -1,0 +1,10 @@
+
+Action: Login            | Time: 2023-04-29 13:11:03
+Action: Step             | Time: 2023-04-29 13:11:08
+Action: Step             | Time: 2023-04-29 13:11:19
+Action: Step             | Time: 2023-04-29 13:11:27
+Action: Gather Materials | Time: 2023-04-29 13:11:29
+Action: Step             | Time: 2023-04-29 13:11:37
+Action: Step             | Time: 2023-04-29 13:11:43
+Action: Step             | Time: 2023-04-29 13:11:52
+Action: Step             | Time: 2023-04-29 13:12:02

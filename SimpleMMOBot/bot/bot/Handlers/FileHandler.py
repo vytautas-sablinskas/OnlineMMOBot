@@ -15,12 +15,16 @@ class FileHandler:
             return array
 
     @staticmethod
-    def write_into_file(file_path, data, append=False):
+    def write_into_file(file_path, data, append=False, append_type='new_line'):
         mode = 'a' if append else 'w'
         with open(file_path, mode) as file:
             if not append:
                 file.truncate(0)
-            file.write(data)
+            if append_type == 'new_line':
+                file.write('\n' + data)
+            elif append_type == 'extend':
+                file.seek(0, 2)
+                file.write(data)
 
     def get_webdriver_arguments():
         pass

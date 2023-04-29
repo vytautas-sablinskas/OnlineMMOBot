@@ -1,4 +1,6 @@
 from .Initializer import Initializer
+from Managers.Files.FileManager import FileManager
+from Constants.FilePaths import FilePaths
 from Handlers.TimeHandler import TimeHandler
 from Handlers.TextHandler import TextHandler
 from Managers.Navigation.LoginManager import LoginManager
@@ -16,22 +18,25 @@ class ActionController:
             self.chrome_handler.driver)
         self.action_decision_maker = Initializer.initialize_action_decision_maker(
             self.element_handler)
-        self.logger = Initializer.initialize_logger()
         self.logged_in = False
-        self.action_counter = {"Steps": 0,
-                       "Mob Attacks": 0,
-                       "Gather Materials - Grab": 0,
-                       "Gather Materials - Salvage": 0,
-                       "Gather Materials - Catch": 0,
-                       "Gather Materials - Chop": 0,
-                       "Gather Materials - Mine": 0}
+        self.action_counter = {
+            "Steps": 0,
+            "Mob Attacks": 0,
+            "Gather Materials - Grab": 0,
+            "Gather Materials - Salvage": 0,
+            "Gather Materials - Catch": 0,
+            "Gather Materials - Chop": 0,
+            "Gather Materials - Mine": 0
+        }
 
     def find_next_action_and_element(self):
         self.action_decision_maker.find_next_action(logged_in=self.logged_in)  
         if self.action_decision_maker.next_action != "None":
                 current_action_in_text = TextHandler.get_current_action_in_text(self.action_decision_maker.next_action)
+                FileManager.log_text(file_path=FilePaths.ACTION_TRACKING_LOGS.value, 
+                                     message=current_action_in_text
+                )
                 print(current_action_in_text)
-                self.logger.log_info(current_action_in_text)
 
     def execute_next_action(self, next_action, element):
             TimeHandler.sleep_for_random_time(0.3, 0.6)
