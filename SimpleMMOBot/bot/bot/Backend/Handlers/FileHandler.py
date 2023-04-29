@@ -21,6 +21,15 @@ class FileHandler:
         with open(file_path, mode) as file:
             if not append:
                 file.truncate(0)
+
             if append and append_type == 'new_line' and os.path.getsize(file_path) > 0:
                 file.write('\n')
-            file.write(data)
+
+            if isinstance(data, str):
+                file.write(data)
+            elif isinstance(data, list):
+                for i, item in enumerate(data):
+                    if i < len(data)-1:
+                        file.write(item + '\n')
+                    else:
+                        file.write(item)

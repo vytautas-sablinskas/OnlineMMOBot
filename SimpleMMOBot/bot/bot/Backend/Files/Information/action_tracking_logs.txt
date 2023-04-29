@@ -152,3 +152,32 @@ Action: Step             | Time: 2023-04-29 16:43:12
 Action: Step             | Time: 2023-04-29 16:43:19
 Action: Attack Mob       | Time: 2023-04-29 16:43:21
 Action: Step             | Time: 2023-04-29 16:43:28
+Action: Login            | Time: 2023-04-29 16:48:59
+Action: Step             | Time: 2023-04-29 16:49:04
+Action: Attack Mob       | Time: 2023-04-29 16:49:06
+Action: Step             | Time: 2023-04-29 16:49:14
+Action: Step             | Time: 2023-04-29 16:49:23
+Action: Step             | Time: 2023-04-29 16:49:31
+Action: Step             | Time: 2023-04-29 16:49:38
+Action: Step             | Time: 2023-04-29 16:49:46
+Action: Step             | Time: 2023-04-29 16:49:58
+Action: Login            | Time: 2023-04-29 17:16:51
+Action: Login            | Time: 2023-04-29 17:17:29
+Action: Login            | Time: 2023-04-29 17:23:02
+Action: Step             | Time: 2023-04-29 17:23:08
+Action: Login            | Time: 2023-04-29 17:23:13
+Action: Login            | Time: 2023-04-29 17:23:20
+Action: Step             | Time: 2023-04-29 17:23:25
+Action: Login            | Time: 2023-04-29 17:24:26
+Action: Step             | Time: 2023-04-29 17:24:31
+Action: Step             | Time: 2023-04-29 17:24:45
+Action: Step             | Time: 2023-04-29 17:24:55
+Action: Attack Mob       | Time: 2023-04-29 17:24:56
+Action: Step             | Time: 2023-04-29 17:25:00
+Action: Step             | Time: 2023-04-29 17:25:11
+Action: Step             | Time: 2023-04-29 17:25:17
+Action: Step             | Time: 2023-04-29 17:25:25
+Action: Login            | Time: 2023-04-29 17:26:01
+Action: Step             | Time: 2023-04-29 17:26:08
+Action: Attack Mob       | Time: 2023-04-29 17:26:10
+Action: Step             | Time: 2023-04-29 17:26:17
