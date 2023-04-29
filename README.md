@@ -36,10 +36,9 @@ To get started with the SimpleMMO Bot, you'll need:
 To install and use the bot:
 
 1. Clone this repository to your local machine.
-2. Launch Launcher.py file which will install needed dependencies.
-3. Open a terminal and navigate to the Frontend directory.
-4. Run `python Launcher.py`.
-5. Wait until the GUI is opened.
-6. Enter your SimpleMMO account/Discord credentials in the frontend interface.
-7. Configure the Chrome options to your preference.
-8. Click "Start Bot" to begin automating actions in the game.
+2. Open a terminal and navigate to the mmo-automation directory.
+3. Run python 'SimpleMMOBot\bot\bot\Frontend\Launcher.py' file
+4. Wait until the GUI is opened.
+5. Enter your SimpleMMO account/Discord credentials in the frontend interface.
+6. Configure the Chrome options to your preferences.
+7. Click "Start Bot" to begin automating actions in the game.
