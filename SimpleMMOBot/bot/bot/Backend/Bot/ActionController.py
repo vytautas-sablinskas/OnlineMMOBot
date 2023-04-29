@@ -3,6 +3,7 @@ from Managers.Files.FileManager import FileManager
 from Constants.FilePaths import FilePaths
 from Handlers.TimeHandler import TimeHandler
 from Handlers.TextHandler import TextHandler
+from Handlers.FileHandler import FileHandler
 from Managers.Navigation.LoginManager import LoginManager
 from Managers.Actions.VerificationManager import VerificationManager
 from Managers.Actions.StepManager import StepManager
@@ -20,22 +21,25 @@ class ActionController:
             self.element_handler)
         self.logged_in = False
         self.action_counter = {
-            "Steps": 0,
-            "Mob Attacks": 0,
-            "Gather Materials - Grab": 0,
-            "Gather Materials - Salvage": 0,
-            "Gather Materials - Catch": 0,
-            "Gather Materials - Chop": 0,
-            "Gather Materials - Mine": 0
+            "Steps Taken": 0,
+            "Mobs Attacked": 0,
+            "Grab": 0,
+            "Salvage": 0,
+            "Catch": 0,
+            "Chop": 0,
+            "Mine": 0,
+            "AFK Checks": 0
         }
 
     def find_next_action_and_element(self):
-        self.action_decision_maker.find_next_action(logged_in=self.logged_in)  
+        self.action_decision_maker.find_next_action(logged_in=self.logged_in, action_counter=self.action_counter)  
         if self.action_decision_maker.next_action != "None":
                 current_action_in_text = TextHandler.get_current_action_in_text(self.action_decision_maker.next_action)
                 FileManager.log_text(file_path=FilePaths.ACTION_TRACKING_LOGS.value, 
                                      message=current_action_in_text
                 )
+                FileHandler.write_into_file_with_hashmap(file_path=FilePaths.SESSION_ACTION_SUMMARY.value,
+                                            hashmap=self.action_counter)
                 print(current_action_in_text)
 
     def execute_next_action(self, next_action, element):
@@ -55,14 +59,12 @@ class ActionController:
                     )
                 case "Step":
                     StepManager.take_steps(take_step_button=element)
-                    self.action_counter["Steps"] += 1
                 case "Attack Mob":
                     MobAttackManager.attack_mob_until_dead(link_to_mob_attack_page=element,
                                                            chrome_handler=self.chrome_handler,
                                                            element_handler=self.element_handler,
                                                            discord_model=self.discord
                     )
-                    self.action_counter["Mob Attacks"] += 1
                 case "Gather Materials":
                     MaterialGatheringManager.gather_materials(
                         chrome_handler=self.chrome_handler, 
@@ -71,7 +73,6 @@ class ActionController:
                         link_to_material_gathering_page=element, 
                         discord_model=self.discord
                     )
-                    self.action_counter[f"Gather Materials - {self.action_decision_maker.gathering_action}"] += 1
 
 
     def take_action_depending_on_current_screen(self):

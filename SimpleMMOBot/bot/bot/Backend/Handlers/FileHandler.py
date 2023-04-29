@@ -38,3 +38,8 @@ class FileHandler:
                         file.write(item + '\n')
                     else:
                         file.write(item)
+
+    def write_into_file_with_hashmap(file_path, hashmap):
+        with open(file_path, 'w') as file:
+            for key, value in hashmap.items():
+                file.write(f"{key}: {value}\n")

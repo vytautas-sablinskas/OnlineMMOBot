@@ -1,4 +1,5 @@
 from Handlers.TimeHandler import TimeHandler
+import pandas as pd
 
 class TextHandler:
     @staticmethod
@@ -20,6 +21,19 @@ class TextHandler:
         password_or_discord_token = credentials[1].strip()
         return email_or_discord_webhook_url, password_or_discord_token
     
+    def split_actions_summary(lines):
+        actions = []
+        values = []
+
+        for line in lines:
+            if line:
+                action, value = line.split(": ")
+                actions.append(action)
+                values.append(int(value))
+
+        df = pd.DataFrame({"Action": actions, "Count": values})
+        return df
+
     @staticmethod
     def get_bot_status(lines):
         if len(lines) > 0 and lines[0].lower() == "continue":
@@ -32,3 +46,4 @@ class TextHandler:
         max_width = len("Gather Materials")
         current_datetime = TimeHandler.get_current_datetime()
         return f"Action: {next_action.ljust(max_width)} | Time: {current_datetime}"
+

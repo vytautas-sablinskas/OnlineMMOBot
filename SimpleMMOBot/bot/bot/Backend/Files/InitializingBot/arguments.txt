@@ -1,2 +1,1 @@
---headless=new
 --mute-audio

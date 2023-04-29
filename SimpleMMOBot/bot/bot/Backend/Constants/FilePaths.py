@@ -13,3 +13,4 @@ class FilePaths(Enum):
     ACTION_TRACKING_LOGS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/action_tracking_logs.txt')
     BOT_START = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/main.py')
     PANEL_BOT_STATUS = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/panel_status.txt')
+    SESSION_ACTION_SUMMARY = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/session_action_summary.txt')
