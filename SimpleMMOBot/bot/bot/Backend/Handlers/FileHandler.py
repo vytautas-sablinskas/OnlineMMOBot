@@ -1,4 +1,5 @@
 from Handlers.TextHandler import TextHandler
+import os
 
 class FileHandler:
     @staticmethod
@@ -20,11 +21,6 @@ class FileHandler:
         with open(file_path, mode) as file:
             if not append:
                 file.truncate(0)
-            if append_type == 'new_line':
-                file.write('\n' + data)
-            elif append_type == 'extend':
-                file.seek(0, 2)
-                file.write(data)
-
-    def get_webdriver_arguments():
-        pass
+            if append and append_type == 'new_line' and os.path.getsize(file_path) > 0:
+                file.write('\n')
+            file.write(data)

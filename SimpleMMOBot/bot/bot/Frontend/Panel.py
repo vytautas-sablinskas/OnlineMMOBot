@@ -1,5 +1,11 @@
+import sys
+import os
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Backend'))
+sys.path.append(backend_dir)
+
 import streamlit as st
 from streamlit_option_menu import option_menu
+import MainMenu.StartupPage as StartupPage
 
 def set_sidebar():
     with st.sidebar:
@@ -9,13 +15,11 @@ def set_sidebar():
         )
         
     if selected == "Script Launcher":
-        bot_startup()
+        StartupPage.show_page()
     elif selected == "Script Information":
         running_script()
 
-def bot_startup():
-    st.header('Welcome to SimpleMMO Bot')
-    st.write("Hello, it's the bot startup tab.")
+
 
 def running_script():
     st.write("Hello, it's the running script tab.")
