@@ -13,8 +13,11 @@ class TextHandler:
 
     @staticmethod
     def split_credentials(credentials):
-        email_or_discord_webhook_url = credentials[0].strip() if credentials[0] else ''
-        password_or_discord_token = credentials[1].strip() if credentials[1] else ''
+        if len(credentials) < 2:
+            return "", ""
+        
+        email_or_discord_webhook_url = credentials[0].strip()
+        password_or_discord_token = credentials[1].strip()
         return email_or_discord_webhook_url, password_or_discord_token
     
     @staticmethod

@@ -96,6 +96,11 @@ def show_page():
         if script_status != "Stopped":
             st.info("Bot is already running!")
             return
+        
+        input_fields_not_filled = len(email_input_box) <= 0 or len(password_input_box) <= 0 or len(discord_webhook_url_box) <= 0 or len(discord_token_box) <= 0
+        if input_fields_not_filled:
+            st.error("Fill in all input fields | Checkboxes are not necessary")
+            return
 
         chrome_arguments = get_argument_values(headless_mode, mute_audio)
         process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box, chrome_arguments)
