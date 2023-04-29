@@ -19,7 +19,5 @@ class TimeHandler:
         self.start_time = time.time()
 
     def elapsed_time(self):
-        return self.start_time - time.time()
-
-    def reset_timer(self):
-        self.start_time = None
+        self.end_time = time.time()
+        return self.start_time - self.end_time

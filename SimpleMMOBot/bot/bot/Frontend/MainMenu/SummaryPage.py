@@ -5,12 +5,11 @@ sys.path.append(backend_dir)
 
 import streamlit as st
 import numpy as np
-from Handlers.FileHandler import FileHandler
+from Managers.Files.FileManager import FileManager
 from Handlers.TextHandler import TextHandler
-from Constants.FilePaths import FilePaths
 
 def show_action_counts():
-    action_lines = FileHandler.read_from_file_lines(FilePaths.SESSION_ACTION_SUMMARY.value)
+    action_lines = FileManager.get_session_summary()
     action_df = TextHandler.split_actions_summary(action_lines)
     action_df.index = np.arange(1, 9)
     st.header("Actions done in this session")

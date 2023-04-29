@@ -6,17 +6,16 @@ sys.path.append(backend_dir)
 import pandas as pd
 import numpy as np
 import streamlit as st
-from Handlers.FileHandler import FileHandler
-from Constants.FilePaths import FilePaths
+from Managers.Files.FileManager import FileManager
 
 def get_last_ten_actions():
-    actions = FileHandler.read_from_file_lines(FilePaths.ACTION_TRACKING_LOGS.value)
-    last_ten_actions = actions[-10:]
+    action_logs = FileManager.get_action_tracking_logs()
+    last_ten_actions = action_logs[-10:]
     df = pd.DataFrame(last_ten_actions, columns=['Actions and their execution time'])
     return df
 
 def show_current_action():
-    current_action = FileHandler.read_as_string_whole_file(FilePaths.CURRENT_BOT_ACTION.value)
+    current_action = FileManager.get_current_bot_action()
     st.header("Current action:")
     st.write(current_action)
 

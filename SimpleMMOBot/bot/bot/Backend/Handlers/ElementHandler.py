@@ -5,7 +5,7 @@ class ElementHandler:
     def __init__(self, driver):
             self.driver = driver
 
-    def go_to_page_by_clicking_element(self, element):
+    def click_element(element):
         if element and element.is_enabled():
             element.click()
             time.sleep(1)
@@ -26,8 +26,8 @@ class ElementHandler:
             return None
 
     def find_and_click_on_element(self, locator_type, expression_type):
-        element = self.find_element(locator_type, expression_type)
         element_was_clicked = False
+        element = self.find_element(locator_type, expression_type)
         element_was_found = element and element.is_enabled() and element.is_displayed()
         if element_was_found:
             try:

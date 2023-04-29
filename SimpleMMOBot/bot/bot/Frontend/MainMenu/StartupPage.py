@@ -6,7 +6,6 @@ sys.path.append(backend_dir)
 import streamlit as st
 import psutil
 import subprocess
-from Handlers.FileHandler import FileHandler
 from Managers.Files.FileManager import FileManager
 from Constants.FilePaths import FilePaths
 
@@ -51,16 +50,9 @@ def get_argument_checkboxes():
     return headless_mode, mute_audio
 
 def run_bot(email, password, discord_webhook_url, discord_token, chrome_arguments):
-    FileHandler.write_into_file(file_path=FilePaths.CREDENTIALS.value,
-                                data=f"{email}\n{password}"
-    )
-
-    FileHandler.write_into_file(file_path=FilePaths.DISCORD_CREDENTIALS.value,
-                                data=f"{discord_webhook_url}\n{discord_token}"
-    )
-
-    FileHandler.write_into_file(file_path=FilePaths.CHROME_ARGUMENTS.value,
-                                data=chrome_arguments)
+    FileManager.update_user_credentials(email, password)
+    FileManager.update_discord_credentials(discord_webhook_url, discord_token)
+    FileManager.update_chrome_arguments(chrome_arguments)
     
     process = subprocess.Popen(["python", FilePaths.BOT_START.value])
     st.success("Bot successfully started")
@@ -103,7 +95,7 @@ def show_page(script_status):
         chrome_arguments = get_argument_values(headless_mode, mute_audio)
         process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box, chrome_arguments)
         script_status="Running"
-        FileHandler.write_into_file(FilePaths.PANEL_BOT_STATUS.value, script_status)
+        FileManager.update_panel_bot_status(script_status)
     
     if stop_button:
         if script_status.lower() != "running" or process is None:
@@ -112,4 +104,4 @@ def show_page(script_status):
         
         stop_bot(process)
         script_status="Stopped"
-        FileHandler.write_into_file(FilePaths.PANEL_BOT_STATUS.value, script_status)
+        FileManager.update_panel_bot_status(script_status)

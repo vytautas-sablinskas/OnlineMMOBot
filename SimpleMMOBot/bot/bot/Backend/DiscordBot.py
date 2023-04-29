@@ -3,6 +3,7 @@ import sys
 import time
 from Handlers.FileHandler import FileHandler
 from Constants.FilePaths import FilePaths
+from Managers.Files.FileManager import FileManager
 
 last_message_time = 0
 cooldown_time = 5
@@ -14,14 +15,11 @@ def get_response(message: str):
         return "!continue - Continues bot from pause\n!action - Shows current bot action and start time"
 
     if user_message == 'continue':
-        FileHandler.write_into_file(
-            file_path=FilePaths.BOT_STATUS.value, 
-            data="continue"
-        )
+        FileManager.update_bot_status(status_text="continue")
         return "Script was unpaused! Make sure to have verified AFK check"
 
     if user_message == 'action':
-        current_action_message = FileHandler.read_from_file_lines(FilePaths.CURRENT_BOT_ACTION.value)
+        current_action_message = FileManager.get_current_bot_action()
         return current_action_message
 
     return "There's no such command"
