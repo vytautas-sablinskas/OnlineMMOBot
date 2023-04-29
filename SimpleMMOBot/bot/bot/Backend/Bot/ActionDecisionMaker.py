@@ -25,7 +25,7 @@ class ActionDecisionMaker:
         if attack_mob_element and attack_mob_element.is_enabled():
             self.element = attack_mob_element
             self.next_action = "Attack Mob"
-            action_counter["Mobs Attacked"]
+            action_counter["Mobs Attacked"] += 1
             return
 
         gathering_level_too_low = self.element_handler.find_element(By.XPATH, Expressions.GATHERING_LEVEL_TOO_LOW.value)  

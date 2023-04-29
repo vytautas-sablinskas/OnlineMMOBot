@@ -1,8 +1,8 @@
-Steps Taken: 5
-Mobs Attacked: 0
+Steps Taken: 14
+Mobs Attacked: 2
 Grab: 0
-Salvage: 0
+Salvage: 1
 Catch: 0
-Chop: 0
+Chop: 1
 Mine: 0
 AFK Checks: 0
