@@ -11,6 +11,7 @@ from Managers.Files.FileManager import FileManager
 from Constants.FilePaths import FilePaths
 
 process = None
+script_status = "Stopped"
 
 def get_user_credential_input_fields():
     email, password =  FileManager.get_user_or_discord_credentials(FilePaths.CREDENTIALS.value)
@@ -66,11 +67,7 @@ def run_bot(email, password, discord_webhook_url, discord_token, chrome_argument
     st.success("Bot successfully started")
     return process
 
-def stop_bot(process):
-    if process is None:
-        st.error("Bot hasn't started yet!")
-        return
-    
+def stop_bot(process):  
     parent = psutil.Process(process.pid)
     children = parent.children(recursive=True)
     for child in children:
@@ -81,6 +78,7 @@ def stop_bot(process):
 
 def show_page():
     global process
+    global script_status
 
     st.header('Welcome to SimpleMMO Bot')
     st.write('Enter information and settings')
@@ -95,8 +93,18 @@ def show_page():
     stop_button = stop_button_place.button(label="Stop bot")
 
     if run_button:
+        if script_status != "Stopped":
+            st.info("Bot is already running!")
+            return
+
         chrome_arguments = get_argument_values(headless_mode, mute_audio)
         process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box, chrome_arguments)
+        script_status="Running"
     
     if stop_button:
+        if script_status != "Running" or process is None:
+            st.info("Bot is already not running!")
+            return
+        
         stop_bot(process)
+        script_status="Stopped"
