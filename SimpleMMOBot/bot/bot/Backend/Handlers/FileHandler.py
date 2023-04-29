@@ -9,6 +9,11 @@ class FileHandler:
             return lines
         
     @staticmethod
+    def read_as_string_whole_file(file_path):
+        lines = FileHandler.read_from_file_lines(file_path)
+        return ''.join(lines)
+        
+    @staticmethod
     def get_array_from_file(file_path, delimiter):
         with open(file_path, 'r') as file:
             lines = file.readlines()

@@ -5,3 +5,5 @@ discord
 psutil
 streamlit
 streamlit_option_menu
+numpy
+pandas
