@@ -1,5 +1,5 @@
-Steps Taken: 2
-Mobs Attacked: 0
+Steps Taken: 15
+Mobs Attacked: 1
 Grab: 0
 Salvage: 0
 Catch: 0

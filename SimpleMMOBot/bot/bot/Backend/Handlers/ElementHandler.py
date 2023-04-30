@@ -9,6 +9,9 @@ class ElementHandler:
         if element and element.is_enabled():
             element.click()
             time.sleep(1)
+            return True
+        
+        return False
 
     def find_element(self, locator_type, expression_type):
         try:
@@ -43,4 +46,10 @@ class ElementHandler:
         element_exists = element != None
         if element_exists:
             element.send_keys(text)
+
+    def send_input_to_element(self, element, text):
+        if element == None:
+            return
+        
+        element.send_keys(text)
 

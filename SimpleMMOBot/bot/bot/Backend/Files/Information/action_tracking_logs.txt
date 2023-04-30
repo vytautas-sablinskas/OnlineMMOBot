@@ -2903,3 +2903,595 @@ Action: Step             | Time: 2023-04-30 02:29:59
 Action: Login            | Time: 2023-04-30 02:30:12
 Action: Step             | Time: 2023-04-30 02:30:17
 Action: Step             | Time: 2023-04-30 02:30:23
+Action: Step             | Time: 2023-04-30 02:30:37
+Action: Login            | Time: 2023-04-30 10:26:20
+Action: Step             | Time: 2023-04-30 10:26:25
+Action: Step             | Time: 2023-04-30 10:26:33
+Action: Step             | Time: 2023-04-30 10:26:44
+Action: Step             | Time: 2023-04-30 10:26:51
+Action: Gather Materials | Time: 2023-04-30 10:26:54
+Action: Step             | Time: 2023-04-30 10:27:03
+Action: AFK Verification | Time: 2023-04-30 10:27:06
+Action: Step             | Time: 2023-04-30 10:27:31
+Action: Attack Mob       | Time: 2023-04-30 10:27:32
+Action: Step             | Time: 2023-04-30 10:27:40
+Action: Step             | Time: 2023-04-30 10:27:50
+Action: Step             | Time: 2023-04-30 10:27:58
+Action: Step             | Time: 2023-04-30 10:28:08
+Action: Attack Mob       | Time: 2023-04-30 10:28:11
+Action: Step             | Time: 2023-04-30 10:28:19
+Action: Step             | Time: 2023-04-30 10:28:33
+Action: Step             | Time: 2023-04-30 10:28:41
+Action: Attack Mob       | Time: 2023-04-30 10:28:43
+Action: Step             | Time: 2023-04-30 10:28:50
+Action: Step             | Time: 2023-04-30 10:29:00
+Action: Step             | Time: 2023-04-30 10:29:08
+Action: Step             | Time: 2023-04-30 10:29:19
+Action: Step             | Time: 2023-04-30 10:29:28
+Action: Step             | Time: 2023-04-30 10:29:38
+Action: Step             | Time: 2023-04-30 10:29:48
+Action: Step             | Time: 2023-04-30 10:29:57
+Action: Step             | Time: 2023-04-30 10:30:06
+Action: Step             | Time: 2023-04-30 10:30:16
+Action: Gather Materials | Time: 2023-04-30 10:30:19
+Action: Step             | Time: 2023-04-30 10:30:25
+Action: Step             | Time: 2023-04-30 10:30:36
+Action: Step             | Time: 2023-04-30 10:30:43
+Action: Gather Materials | Time: 2023-04-30 10:30:45
+Action: Step             | Time: 2023-04-30 10:30:51
+Action: Step             | Time: 2023-04-30 10:30:58
+Action: Gather Materials | Time: 2023-04-30 10:31:01
+Action: Step             | Time: 2023-04-30 10:31:10
+Action: Step             | Time: 2023-04-30 10:31:22
+Action: Attack Mob       | Time: 2023-04-30 10:31:25
+Action: Step             | Time: 2023-04-30 10:31:33
+Action: Step             | Time: 2023-04-30 10:31:43
+Action: Step             | Time: 2023-04-30 10:31:52
+Action: Attack Mob       | Time: 2023-04-30 10:31:54
+Action: Step             | Time: 2023-04-30 10:32:00
+Action: Step             | Time: 2023-04-30 10:32:09
+Action: Attack Mob       | Time: 2023-04-30 10:32:12
+Action: Step             | Time: 2023-04-30 10:32:20
+Action: Step             | Time: 2023-04-30 10:32:29
+Action: Step             | Time: 2023-04-30 10:32:39
+Action: Step             | Time: 2023-04-30 10:32:56
+Action: Gather Materials | Time: 2023-04-30 10:32:59
+Action: Step             | Time: 2023-04-30 10:33:07
+Action: Step             | Time: 2023-04-30 10:33:14
+Action: Step             | Time: 2023-04-30 10:33:24
+Action: Step             | Time: 2023-04-30 10:33:31
+Action: Gather Materials | Time: 2023-04-30 10:33:33
+Action: Step             | Time: 2023-04-30 10:33:39
+Action: Step             | Time: 2023-04-30 10:33:47
+Action: Gather Materials | Time: 2023-04-30 10:33:50
+Action: Step             | Time: 2023-04-30 10:33:58
+Action: Gather Materials | Time: 2023-04-30 10:34:00
+Action: Step             | Time: 2023-04-30 10:34:09
+Action: Step             | Time: 2023-04-30 10:34:16
+Action: Step             | Time: 2023-04-30 10:34:24
+Action: Step             | Time: 2023-04-30 10:34:31
+Action: Gather Materials | Time: 2023-04-30 10:34:35
+Action: Step             | Time: 2023-04-30 10:34:41
+Action: Gather Materials | Time: 2023-04-30 10:34:43
+Action: Step             | Time: 2023-04-30 10:34:51
+Action: Attack Mob       | Time: 2023-04-30 10:34:54
+Action: Step             | Time: 2023-04-30 10:35:01
+Action: Step             | Time: 2023-04-30 10:35:11
+Action: Gather Materials | Time: 2023-04-30 10:35:13
+Action: Step             | Time: 2023-04-30 10:35:23
+Action: Step             | Time: 2023-04-30 10:35:32
+Action: Step             | Time: 2023-04-30 10:35:40
+Action: Gather Materials | Time: 2023-04-30 10:35:42
+Action: Step             | Time: 2023-04-30 10:35:49
+Action: Step             | Time: 2023-04-30 10:35:57
+Action: Step             | Time: 2023-04-30 10:36:04
+Action: Step             | Time: 2023-04-30 10:36:12
+Action: Step             | Time: 2023-04-30 10:36:19
+Action: Step             | Time: 2023-04-30 10:36:26
+Action: Step             | Time: 2023-04-30 10:36:35
+Action: Step             | Time: 2023-04-30 10:36:50
+Action: Step             | Time: 2023-04-30 10:37:00
+Action: Step             | Time: 2023-04-30 10:37:10
+Action: Attack Mob       | Time: 2023-04-30 10:37:13
+Action: Step             | Time: 2023-04-30 10:37:17
+Action: Gather Materials | Time: 2023-04-30 10:37:20
+Action: Step             | Time: 2023-04-30 10:37:25
+Action: Step             | Time: 2023-04-30 10:37:33
+Action: Gather Materials | Time: 2023-04-30 10:37:35
+Action: Step             | Time: 2023-04-30 10:37:43
+Action: Step             | Time: 2023-04-30 10:37:50
+Action: Step             | Time: 2023-04-30 10:37:59
+Action: Step             | Time: 2023-04-30 10:38:09
+Action: Step             | Time: 2023-04-30 10:38:19
+Action: Gather Materials | Time: 2023-04-30 10:38:21
+Action: Step             | Time: 2023-04-30 10:38:27
+Action: Step             | Time: 2023-04-30 10:38:36
+Action: Step             | Time: 2023-04-30 10:38:47
+Action: Step             | Time: 2023-04-30 10:38:57
+Action: Step             | Time: 2023-04-30 10:39:06
+Action: Attack Mob       | Time: 2023-04-30 10:39:09
+Action: Step             | Time: 2023-04-30 10:39:12
+Action: Step             | Time: 2023-04-30 10:39:22
+Action: Gather Materials | Time: 2023-04-30 10:39:24
+Action: Step             | Time: 2023-04-30 10:39:30
+Action: Step             | Time: 2023-04-30 10:39:40
+Action: Step             | Time: 2023-04-30 10:39:49
+Action: Step             | Time: 2023-04-30 10:39:56
+Action: Gather Materials | Time: 2023-04-30 10:39:59
+Action: Step             | Time: 2023-04-30 10:40:07
+Action: Attack Mob       | Time: 2023-04-30 10:40:09
+Action: Step             | Time: 2023-04-30 10:40:17
+Action: Gather Materials | Time: 2023-04-30 10:40:20
+Action: Step             | Time: 2023-04-30 10:40:28
+Action: Step             | Time: 2023-04-30 10:40:36
+Action: Gather Materials | Time: 2023-04-30 10:40:38
+Action: Step             | Time: 2023-04-30 10:40:46
+Action: Step             | Time: 2023-04-30 10:40:57
+Action: Step             | Time: 2023-04-30 10:41:07
+Action: Step             | Time: 2023-04-30 10:41:15
+Action: Step             | Time: 2023-04-30 10:41:25
+Action: Attack Mob       | Time: 2023-04-30 10:41:28
+Action: Step             | Time: 2023-04-30 10:41:34
+Action: Step             | Time: 2023-04-30 10:41:42
+Action: Gather Materials | Time: 2023-04-30 10:41:45
+Action: Step             | Time: 2023-04-30 10:41:54
+Action: Step             | Time: 2023-04-30 10:42:02
+Action: Step             | Time: 2023-04-30 10:42:09
+Action: Step             | Time: 2023-04-30 10:42:17
+Action: Step             | Time: 2023-04-30 10:42:28
+Action: Step             | Time: 2023-04-30 10:42:39
+Action: Attack Mob       | Time: 2023-04-30 10:42:42
+Action: Step             | Time: 2023-04-30 10:42:49
+Action: Step             | Time: 2023-04-30 10:42:58
+Action: Step             | Time: 2023-04-30 10:43:09
+Action: Step             | Time: 2023-04-30 10:43:18
+Action: Step             | Time: 2023-04-30 10:43:28
+Action: Step             | Time: 2023-04-30 10:43:35
+Action: Step             | Time: 2023-04-30 10:43:43
+Action: Step             | Time: 2023-04-30 10:43:50
+Action: Step             | Time: 2023-04-30 10:43:57
+Action: Step             | Time: 2023-04-30 10:44:06
+Action: Gather Materials | Time: 2023-04-30 10:44:09
+Action: Step             | Time: 2023-04-30 10:44:15
+Action: Gather Materials | Time: 2023-04-30 10:44:19
+Action: Step             | Time: 2023-04-30 10:44:29
+Action: Step             | Time: 2023-04-30 10:44:39
+Action: Step             | Time: 2023-04-30 10:44:49
+Action: Step             | Time: 2023-04-30 10:44:59
+Action: Step             | Time: 2023-04-30 10:45:09
+Action: Step             | Time: 2023-04-30 10:45:19
+Action: Step             | Time: 2023-04-30 10:45:28
+Action: Gather Materials | Time: 2023-04-30 10:45:30
+Action: Step             | Time: 2023-04-30 10:45:38
+Action: Step             | Time: 2023-04-30 10:45:47
+Action: Step             | Time: 2023-04-30 10:45:56
+Action: Step             | Time: 2023-04-30 10:46:04
+Action: Gather Materials | Time: 2023-04-30 10:46:06
+Action: Step             | Time: 2023-04-30 10:46:14
+Action: Step             | Time: 2023-04-30 10:46:24
+Action: Gather Materials | Time: 2023-04-30 10:46:26
+Action: Step             | Time: 2023-04-30 10:46:33
+Action: Step             | Time: 2023-04-30 10:46:39
+Action: Step             | Time: 2023-04-30 10:46:46
+Action: Gather Materials | Time: 2023-04-30 10:46:50
+Action: Step             | Time: 2023-04-30 10:46:57
+Action: Gather Materials | Time: 2023-04-30 10:47:00
+Action: Step             | Time: 2023-04-30 10:47:06
+Action: Step             | Time: 2023-04-30 10:47:20
+Action: Gather Materials | Time: 2023-04-30 10:47:23
+Action: Step             | Time: 2023-04-30 10:47:31
+Action: Step             | Time: 2023-04-30 10:47:48
+Action: Step             | Time: 2023-04-30 10:47:59
+Action: Attack Mob       | Time: 2023-04-30 10:48:01
+Action: Step             | Time: 2023-04-30 10:48:09
+Action: AFK Verification | Time: 2023-04-30 10:48:12
+Action: Step             | Time: 2023-04-30 10:49:19
+Action: Step             | Time: 2023-04-30 10:49:27
+Action: Step             | Time: 2023-04-30 10:49:37
+Action: Step             | Time: 2023-04-30 10:49:44
+Action: Step             | Time: 2023-04-30 10:49:53
+Action: Step             | Time: 2023-04-30 10:49:59
+Action: Step             | Time: 2023-04-30 10:50:09
+Action: Step             | Time: 2023-04-30 10:50:18
+Action: Step             | Time: 2023-04-30 10:50:29
+Action: Step             | Time: 2023-04-30 10:50:41
+Action: Step             | Time: 2023-04-30 10:50:49
+Action: Step             | Time: 2023-04-30 10:50:59
+Action: Step             | Time: 2023-04-30 10:51:05
+Action: Gather Materials | Time: 2023-04-30 10:51:08
+Action: Step             | Time: 2023-04-30 10:51:15
+Action: Step             | Time: 2023-04-30 10:51:26
+Action: Step             | Time: 2023-04-30 10:51:32
+Action: Step             | Time: 2023-04-30 10:51:40
+Action: Step             | Time: 2023-04-30 10:51:49
+Action: Gather Materials | Time: 2023-04-30 10:51:52
+Action: Step             | Time: 2023-04-30 10:52:00
+Action: Step             | Time: 2023-04-30 10:52:10
+Action: Attack Mob       | Time: 2023-04-30 10:52:12
+Action: Step             | Time: 2023-04-30 10:52:18
+Action: Step             | Time: 2023-04-30 10:52:27
+Action: Step             | Time: 2023-04-30 10:52:34
+Action: Gather Materials | Time: 2023-04-30 10:52:36
+Action: Step             | Time: 2023-04-30 10:52:43
+Action: Step             | Time: 2023-04-30 10:52:52
+Action: Step             | Time: 2023-04-30 10:52:59
+Action: Step             | Time: 2023-04-30 10:53:09
+Action: Gather Materials | Time: 2023-04-30 10:53:11
+Action: Step             | Time: 2023-04-30 10:53:20
+Action: Gather Materials | Time: 2023-04-30 10:53:22
+Action: Step             | Time: 2023-04-30 10:53:33
+Action: Step             | Time: 2023-04-30 10:53:50
+Action: Gather Materials | Time: 2023-04-30 10:53:53
+Action: Step             | Time: 2023-04-30 10:54:00
+Action: Attack Mob       | Time: 2023-04-30 10:54:03
+Action: Step             | Time: 2023-04-30 10:54:10
+Action: Step             | Time: 2023-04-30 10:54:21
+Action: Step             | Time: 2023-04-30 10:54:27
+Action: Attack Mob       | Time: 2023-04-30 10:54:29
+Action: Step             | Time: 2023-04-30 10:54:36
+Action: Attack Mob       | Time: 2023-04-30 10:54:38
+Action: Step             | Time: 2023-04-30 10:54:44
+Action: Step             | Time: 2023-04-30 10:54:53
+Action: Step             | Time: 2023-04-30 10:55:01
+Action: Step             | Time: 2023-04-30 10:55:12
+Action: Step             | Time: 2023-04-30 10:55:21
+Action: Gather Materials | Time: 2023-04-30 10:55:24
+Action: Step             | Time: 2023-04-30 10:55:32
+Action: Attack Mob       | Time: 2023-04-30 10:55:34
+Action: Step             | Time: 2023-04-30 10:55:39
+Action: Step             | Time: 2023-04-30 10:55:47
+Action: Gather Materials | Time: 2023-04-30 10:55:49
+Action: Step             | Time: 2023-04-30 10:55:58
+Action: Step             | Time: 2023-04-30 10:56:05
+Action: Step             | Time: 2023-04-30 10:56:12
+Action: Step             | Time: 2023-04-30 10:56:19
+Action: Attack Mob       | Time: 2023-04-30 10:56:21
+Action: Step             | Time: 2023-04-30 10:56:27
+Action: Step             | Time: 2023-04-30 10:56:35
+Action: Step             | Time: 2023-04-30 10:56:45
+Action: Step             | Time: 2023-04-30 10:56:54
+Action: Step             | Time: 2023-04-30 10:57:02
+Action: Step             | Time: 2023-04-30 10:57:16
+Action: Step             | Time: 2023-04-30 10:57:24
+Action: Step             | Time: 2023-04-30 10:57:37
+Action: Gather Materials | Time: 2023-04-30 10:57:39
+Action: Step             | Time: 2023-04-30 10:57:46
+Action: Step             | Time: 2023-04-30 10:57:54
+Action: Attack Mob       | Time: 2023-04-30 10:57:55
+Action: Step             | Time: 2023-04-30 10:57:59
+Action: Step             | Time: 2023-04-30 10:58:13
+Action: Attack Mob       | Time: 2023-04-30 10:58:15
+Action: Step             | Time: 2023-04-30 10:58:22
+Action: Step             | Time: 2023-04-30 10:58:36
+Action: Step             | Time: 2023-04-30 10:58:43
+Action: Step             | Time: 2023-04-30 10:58:54
+Action: Step             | Time: 2023-04-30 10:59:01
+Action: Gather Materials | Time: 2023-04-30 10:59:04
+Action: Step             | Time: 2023-04-30 10:59:11
+Action: Step             | Time: 2023-04-30 10:59:20
+Action: Step             | Time: 2023-04-30 10:59:26
+Action: Attack Mob       | Time: 2023-04-30 10:59:27
+Action: Step             | Time: 2023-04-30 10:59:34
+Action: Step             | Time: 2023-04-30 10:59:43
+Action: Attack Mob       | Time: 2023-04-30 10:59:45
+Action: Step             | Time: 2023-04-30 10:59:52
+Action: Step             | Time: 2023-04-30 10:59:58
+Action: Step             | Time: 2023-04-30 11:00:07
+Action: Step             | Time: 2023-04-30 11:00:16
+Action: Attack Mob       | Time: 2023-04-30 11:00:18
+Action: Step             | Time: 2023-04-30 11:00:23
+Action: Gather Materials | Time: 2023-04-30 11:00:26
+Action: Step             | Time: 2023-04-30 11:00:35
+Action: Step             | Time: 2023-04-30 11:00:45
+Action: Attack Mob       | Time: 2023-04-30 11:00:47
+Action: Step             | Time: 2023-04-30 11:00:52
+Action: Gather Materials | Time: 2023-04-30 11:00:55
+Action: Step             | Time: 2023-04-30 11:01:04
+Action: Step             | Time: 2023-04-30 11:01:15
+Action: Step             | Time: 2023-04-30 11:01:24
+Action: Attack Mob       | Time: 2023-04-30 11:01:27
+Action: Step             | Time: 2023-04-30 11:01:34
+Action: Gather Materials | Time: 2023-04-30 11:01:37
+Action: Step             | Time: 2023-04-30 11:01:44
+Action: Step             | Time: 2023-04-30 11:01:52
+Action: Attack Mob       | Time: 2023-04-30 11:01:55
+Action: Step             | Time: 2023-04-30 11:02:00
+Action: Step             | Time: 2023-04-30 11:02:09
+Action: Gather Materials | Time: 2023-04-30 11:02:12
+Action: Step             | Time: 2023-04-30 11:02:21
+Action: Step             | Time: 2023-04-30 11:02:28
+Action: Step             | Time: 2023-04-30 11:02:35
+Action: Step             | Time: 2023-04-30 11:02:42
+Action: Gather Materials | Time: 2023-04-30 11:02:45
+Action: Step             | Time: 2023-04-30 11:02:56
+Action: Attack Mob       | Time: 2023-04-30 11:02:59
+Action: Step             | Time: 2023-04-30 11:03:04
+Action: Step             | Time: 2023-04-30 11:03:19
+Action: Step             | Time: 2023-04-30 11:03:28
+Action: Step             | Time: 2023-04-30 11:03:38
+Action: Step             | Time: 2023-04-30 11:03:50
+Action: Step             | Time: 2023-04-30 11:04:02
+Action: Gather Materials | Time: 2023-04-30 11:04:05
+Action: Step             | Time: 2023-04-30 11:04:14
+Action: Step             | Time: 2023-04-30 11:04:28
+Action: Step             | Time: 2023-04-30 11:04:37
+Action: Attack Mob       | Time: 2023-04-30 11:04:39
+Action: Step             | Time: 2023-04-30 11:04:44
+Action: Step             | Time: 2023-04-30 11:04:51
+Action: Step             | Time: 2023-04-30 11:05:00
+Action: Step             | Time: 2023-04-30 11:05:12
+Action: Step             | Time: 2023-04-30 11:05:21
+Action: Gather Materials | Time: 2023-04-30 11:05:24
+Action: Step             | Time: 2023-04-30 11:05:33
+Action: Step             | Time: 2023-04-30 11:05:43
+Action: Step             | Time: 2023-04-30 11:05:51
+Action: Step             | Time: 2023-04-30 11:06:01
+Action: Step             | Time: 2023-04-30 11:06:08
+Action: Step             | Time: 2023-04-30 11:06:15
+Action: Step             | Time: 2023-04-30 11:06:25
+Action: Step             | Time: 2023-04-30 11:06:32
+Action: Step             | Time: 2023-04-30 11:06:40
+Action: Step             | Time: 2023-04-30 11:06:49
+Action: Step             | Time: 2023-04-30 11:06:57
+Action: Attack Mob       | Time: 2023-04-30 11:06:59
+Action: Step             | Time: 2023-04-30 11:07:03
+Action: Step             | Time: 2023-04-30 11:07:13
+Action: Step             | Time: 2023-04-30 11:07:22
+Action: Step             | Time: 2023-04-30 11:07:30
+Action: Gather Materials | Time: 2023-04-30 11:07:32
+Action: Step             | Time: 2023-04-30 11:07:39
+Action: Step             | Time: 2023-04-30 11:07:45
+Action: Step             | Time: 2023-04-30 11:07:55
+Action: Step             | Time: 2023-04-30 11:08:08
+Action: Step             | Time: 2023-04-30 11:08:20
+Action: Gather Materials | Time: 2023-04-30 11:08:22
+Action: Step             | Time: 2023-04-30 11:08:28
+Action: Step             | Time: 2023-04-30 11:08:37
+Action: Step             | Time: 2023-04-30 11:08:47
+Action: Gather Materials | Time: 2023-04-30 11:08:49
+Action: Step             | Time: 2023-04-30 11:08:55
+Action: Step             | Time: 2023-04-30 11:09:06
+Action: Step             | Time: 2023-04-30 11:09:19
+Action: Step             | Time: 2023-04-30 11:09:32
+Action: AFK Verification | Time: 2023-04-30 11:09:36
+Action: Step             | Time: 2023-04-30 11:09:52
+Action: Attack Mob       | Time: 2023-04-30 11:09:55
+Action: Step             | Time: 2023-04-30 11:10:02
+Action: Step             | Time: 2023-04-30 11:10:08
+Action: Step             | Time: 2023-04-30 11:10:18
+Action: Step             | Time: 2023-04-30 11:10:25
+Action: Step             | Time: 2023-04-30 11:10:35
+Action: Step             | Time: 2023-04-30 11:10:42
+Action: Gather Materials | Time: 2023-04-30 11:10:45
+Action: Step             | Time: 2023-04-30 11:10:54
+Action: Step             | Time: 2023-04-30 11:11:04
+Action: Attack Mob       | Time: 2023-04-30 11:11:07
+Action: Step             | Time: 2023-04-30 11:11:11
+Action: Step             | Time: 2023-04-30 11:11:20
+Action: Step             | Time: 2023-04-30 11:11:26
+Action: Step             | Time: 2023-04-30 11:11:31
+Action: Step             | Time: 2023-04-30 11:11:40
+Action: Step             | Time: 2023-04-30 11:11:49
+Action: Attack Mob       | Time: 2023-04-30 11:11:52
+Action: Step             | Time: 2023-04-30 11:11:58
+Action: Step             | Time: 2023-04-30 11:12:09
+Action: Step             | Time: 2023-04-30 11:12:16
+Action: Step             | Time: 2023-04-30 11:12:25
+Action: Step             | Time: 2023-04-30 11:12:35
+Action: Step             | Time: 2023-04-30 11:12:41
+Action: Attack Mob       | Time: 2023-04-30 11:12:43
+Action: Step             | Time: 2023-04-30 11:12:48
+Action: Step             | Time: 2023-04-30 11:13:04
+Action: Attack Mob       | Time: 2023-04-30 11:13:06
+Action: Step             | Time: 2023-04-30 11:13:13
+Action: Step             | Time: 2023-04-30 11:13:24
+Action: Step             | Time: 2023-04-30 11:13:34
+Action: Step             | Time: 2023-04-30 11:13:44
+Action: Step             | Time: 2023-04-30 11:13:52
+Action: Attack Mob       | Time: 2023-04-30 11:13:55
+Action: Step             | Time: 2023-04-30 11:14:01
+Action: Step             | Time: 2023-04-30 11:14:09
+Action: Gather Materials | Time: 2023-04-30 11:14:12
+Action: Step             | Time: 2023-04-30 11:14:19
+Action: Step             | Time: 2023-04-30 11:14:29
+Action: Step             | Time: 2023-04-30 11:14:38
+Action: Gather Materials | Time: 2023-04-30 11:14:41
+Action: Step             | Time: 2023-04-30 11:14:49
+Action: Attack Mob       | Time: 2023-04-30 11:14:51
+Action: Step             | Time: 2023-04-30 11:14:56
+Action: Step             | Time: 2023-04-30 11:15:07
+Action: Gather Materials | Time: 2023-04-30 11:15:10
+Action: Step             | Time: 2023-04-30 11:15:15
+Action: Step             | Time: 2023-04-30 11:15:22
+Action: Step             | Time: 2023-04-30 11:15:28
+Action: Step             | Time: 2023-04-30 11:15:36
+Action: Step             | Time: 2023-04-30 11:15:42
+Action: Step             | Time: 2023-04-30 11:15:49
+Action: Gather Materials | Time: 2023-04-30 11:15:52
+Action: Step             | Time: 2023-04-30 11:16:00
+Action: Step             | Time: 2023-04-30 11:16:09
+Action: Gather Materials | Time: 2023-04-30 11:16:13
+Action: Step             | Time: 2023-04-30 11:16:19
+Action: Step             | Time: 2023-04-30 11:16:28
+Action: Gather Materials | Time: 2023-04-30 11:16:30
+Action: Step             | Time: 2023-04-30 11:16:42
+Action: Step             | Time: 2023-04-30 11:16:51
+Action: Step             | Time: 2023-04-30 11:16:59
+Action: Step             | Time: 2023-04-30 11:17:08
+Action: Step             | Time: 2023-04-30 11:17:14
+Action: Step             | Time: 2023-04-30 11:17:23
+Action: Attack Mob       | Time: 2023-04-30 11:17:25
+Action: Step             | Time: 2023-04-30 11:17:31
+Action: Gather Materials | Time: 2023-04-30 11:17:34
+Action: Step             | Time: 2023-04-30 11:17:42
+Action: Step             | Time: 2023-04-30 11:17:56
+Action: Step             | Time: 2023-04-30 11:18:04
+Action: Step             | Time: 2023-04-30 11:18:12
+Action: Gather Materials | Time: 2023-04-30 11:18:16
+Action: Step             | Time: 2023-04-30 11:18:23
+Action: Step             | Time: 2023-04-30 11:18:33
+Action: Step             | Time: 2023-04-30 11:18:39
+Action: Step             | Time: 2023-04-30 11:18:46
+Action: Step             | Time: 2023-04-30 11:18:52
+Action: Attack Mob       | Time: 2023-04-30 11:18:55
+Action: Step             | Time: 2023-04-30 11:19:02
+Action: Step             | Time: 2023-04-30 11:19:11
+Action: Step             | Time: 2023-04-30 11:19:18
+Action: Step             | Time: 2023-04-30 11:19:31
+Action: Step             | Time: 2023-04-30 11:19:39
+Action: Step             | Time: 2023-04-30 11:19:48
+Action: Step             | Time: 2023-04-30 11:19:55
+Action: Step             | Time: 2023-04-30 11:20:06
+Action: Gather Materials | Time: 2023-04-30 11:20:08
+Action: Step             | Time: 2023-04-30 11:20:18
+Action: Attack Mob       | Time: 2023-04-30 11:20:21
+Action: Step             | Time: 2023-04-30 11:20:26
+Action: Step             | Time: 2023-04-30 11:20:36
+Action: Gather Materials | Time: 2023-04-30 11:20:39
+Action: Step             | Time: 2023-04-30 11:20:45
+Action: Step             | Time: 2023-04-30 11:20:54
+Action: Gather Materials | Time: 2023-04-30 11:20:57
+Action: Step             | Time: 2023-04-30 11:21:02
+Action: Step             | Time: 2023-04-30 11:21:11
+Action: Step             | Time: 2023-04-30 11:21:17
+Action: Step             | Time: 2023-04-30 11:21:24
+Action: Step             | Time: 2023-04-30 11:21:31
+Action: Gather Materials | Time: 2023-04-30 11:21:33
+Action: Step             | Time: 2023-04-30 11:21:41
+Action: Step             | Time: 2023-04-30 11:21:49
+Action: Step             | Time: 2023-04-30 11:21:57
+Action: Step             | Time: 2023-04-30 11:22:04
+Action: Step             | Time: 2023-04-30 11:22:12
+Action: Gather Materials | Time: 2023-04-30 11:22:15
+Action: Step             | Time: 2023-04-30 11:22:21
+Action: Attack Mob       | Time: 2023-04-30 11:22:23
+Action: Step             | Time: 2023-04-30 11:22:28
+Action: Step             | Time: 2023-04-30 11:22:36
+Action: Step             | Time: 2023-04-30 11:22:44
+Action: Step             | Time: 2023-04-30 11:22:51
+Action: Step             | Time: 2023-04-30 11:22:57
+Action: Gather Materials | Time: 2023-04-30 11:22:59
+Action: Step             | Time: 2023-04-30 11:23:08
+Action: Step             | Time: 2023-04-30 11:23:15
+Action: Step             | Time: 2023-04-30 11:23:21
+Action: Step             | Time: 2023-04-30 11:23:31
+Action: Step             | Time: 2023-04-30 11:23:38
+Action: Step             | Time: 2023-04-30 11:23:46
+Action: Step             | Time: 2023-04-30 11:23:53
+Action: Step             | Time: 2023-04-30 11:24:02
+Action: Step             | Time: 2023-04-30 11:24:08
+Action: Step             | Time: 2023-04-30 11:24:17
+Action: Gather Materials | Time: 2023-04-30 11:24:19
+Action: Step             | Time: 2023-04-30 11:24:27
+Action: Step             | Time: 2023-04-30 11:24:35
+Action: Step             | Time: 2023-04-30 11:24:43
+Action: Attack Mob       | Time: 2023-04-30 11:24:45
+Action: Step             | Time: 2023-04-30 11:24:53
+Action: Gather Materials | Time: 2023-04-30 11:24:55
+Action: Step             | Time: 2023-04-30 11:25:04
+Action: Attack Mob       | Time: 2023-04-30 11:25:07
+Action: Step             | Time: 2023-04-30 11:25:15
+Action: Attack Mob       | Time: 2023-04-30 11:25:17
+Action: Step             | Time: 2023-04-30 11:25:23
+Action: Step             | Time: 2023-04-30 11:25:30
+Action: Step             | Time: 2023-04-30 11:25:37
+Action: Step             | Time: 2023-04-30 11:25:46
+Action: Gather Materials | Time: 2023-04-30 11:25:49
+Action: Step             | Time: 2023-04-30 11:25:56
+Action: Attack Mob       | Time: 2023-04-30 11:25:58
+Action: Step             | Time: 2023-04-30 11:26:05
+Action: Gather Materials | Time: 2023-04-30 11:26:07
+Action: Step             | Time: 2023-04-30 11:26:16
+Action: Step             | Time: 2023-04-30 11:26:24
+Action: Step             | Time: 2023-04-30 11:26:33
+Action: Gather Materials | Time: 2023-04-30 11:26:36
+Action: Step             | Time: 2023-04-30 11:26:43
+Action: Step             | Time: 2023-04-30 11:26:50
+Action: Step             | Time: 2023-04-30 11:26:58
+Action: Step             | Time: 2023-04-30 11:27:06
+Action: Step             | Time: 2023-04-30 11:27:13
+Action: Step             | Time: 2023-04-30 11:27:20
+Action: Step             | Time: 2023-04-30 11:27:27
+Action: Step             | Time: 2023-04-30 11:27:33
+Action: Login            | Time: 2023-04-30 11:27:40
+Action: Login            | Time: 2023-04-30 11:30:40
+Action: Step             | Time: 2023-04-30 11:30:45
+Action: Attack Mob       | Time: 2023-04-30 11:30:47
+Action: Login            | Time: 2023-04-30 11:32:08
+Action: Step             | Time: 2023-04-30 11:32:12
+Action: Step             | Time: 2023-04-30 11:32:20
+Action: Step             | Time: 2023-04-30 11:32:29
+Action: Gather Materials | Time: 2023-04-30 11:32:31
+Action: Step             | Time: 2023-04-30 11:32:40
+Action: Step             | Time: 2023-04-30 11:32:50
+Action: Step             | Time: 2023-04-30 11:33:03
+Action: Step             | Time: 2023-04-30 11:33:13
+Action: Gather Materials | Time: 2023-04-30 11:33:16
+Action: Step             | Time: 2023-04-30 11:33:24
+Action: Step             | Time: 2023-04-30 11:33:32
+Action: Step             | Time: 2023-04-30 11:35:32
+Action: AFK Verification | Time: 2023-04-30 11:35:34
+Action: Step             | Time: 2023-04-30 11:35:48
+Action: Step             | Time: 2023-04-30 11:35:58
+Action: Step             | Time: 2023-04-30 11:36:07
+Action: Step             | Time: 2023-04-30 11:36:17
+Action: Step             | Time: 2023-04-30 11:36:24
+Action: Attack Mob       | Time: 2023-04-30 11:36:26
+Action: Step             | Time: 2023-04-30 11:36:33
+Action: Step             | Time: 2023-04-30 11:36:42
+Action: Step             | Time: 2023-04-30 11:36:48
+Action: Step             | Time: 2023-04-30 11:36:56
+Action: Step             | Time: 2023-04-30 11:37:07
+Action: Step             | Time: 2023-04-30 11:37:16
+Action: Step             | Time: 2023-04-30 11:37:23
+Action: Step             | Time: 2023-04-30 11:37:30
+Action: Step             | Time: 2023-04-30 11:37:48
+Action: Attack Mob       | Time: 2023-04-30 11:37:51
+Action: Step             | Time: 2023-04-30 11:37:57
+Action: Gather Materials | Time: 2023-04-30 11:37:59
+Action: Step             | Time: 2023-04-30 11:38:08
+Action: Step             | Time: 2023-04-30 11:38:18
+Action: Step             | Time: 2023-04-30 11:38:24
+Action: Gather Materials | Time: 2023-04-30 11:38:27
+Action: Step             | Time: 2023-04-30 11:38:35
+Action: Gather Materials | Time: 2023-04-30 11:38:38
+Action: Step             | Time: 2023-04-30 11:38:45
+Action: Step             | Time: 2023-04-30 11:38:52
+Action: Step             | Time: 2023-04-30 11:39:03
+Action: Step             | Time: 2023-04-30 11:39:16
+Action: Step             | Time: 2023-04-30 11:39:25
+Action: Step             | Time: 2023-04-30 11:39:42
+Action: Gather Materials | Time: 2023-04-30 11:39:44
+Action: Step             | Time: 2023-04-30 11:39:54
+Action: Step             | Time: 2023-04-30 11:40:01
+Action: Step             | Time: 2023-04-30 11:40:08
+Action: Step             | Time: 2023-04-30 11:40:14
+Action: Step             | Time: 2023-04-30 11:40:24
+Action: Step             | Time: 2023-04-30 11:40:30
+Action: Step             | Time: 2023-04-30 11:40:38
+Action: Step             | Time: 2023-04-30 11:40:49
+Action: Step             | Time: 2023-04-30 11:40:59
+Action: Step             | Time: 2023-04-30 11:41:07
+Action: Step             | Time: 2023-04-30 11:41:17
+Action: Attack Mob       | Time: 2023-04-30 11:41:19
+Action: Step             | Time: 2023-04-30 11:41:24
+Action: Step             | Time: 2023-04-30 11:41:30
+Action: Step             | Time: 2023-04-30 11:41:39
+Action: Step             | Time: 2023-04-30 11:41:46
+Action: Login            | Time: 2023-04-30 11:41:52
+Action: Step             | Time: 2023-04-30 11:41:57
+Action: Step             | Time: 2023-04-30 11:42:18
+Action: Step             | Time: 2023-04-30 11:42:31
+Action: Step             | Time: 2023-04-30 11:42:38
+Action: Step             | Time: 2023-04-30 11:42:46
+Action: Step             | Time: 2023-04-30 11:42:54
+Action: Step             | Time: 2023-04-30 11:43:03
+Action: Step             | Time: 2023-04-30 11:43:15
+Action: Step             | Time: 2023-04-30 11:43:23
+Action: Step             | Time: 2023-04-30 11:43:33
+Action: Step             | Time: 2023-04-30 11:44:54
+Action: Step             | Time: 2023-04-30 11:45:04
+Action: Step             | Time: 2023-04-30 11:45:10
+Action: Step             | Time: 2023-04-30 11:45:17
+Action: Attack Mob       | Time: 2023-04-30 11:45:20
+Action: Step             | Time: 2023-04-30 11:48:50
