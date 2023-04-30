@@ -21,6 +21,10 @@ class TextHandler:
         password_or_discord_token = credentials[1].strip()
         return email_or_discord_webhook_url, password_or_discord_token
     
+    def get_user_selected_timers(time_in_list):
+        playtime_in_minutes = int(time_in_list[0])
+        return playtime_in_minutes
+
     def split_actions_summary(lines):
         actions = []
         values = []

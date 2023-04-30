@@ -1,12 +1,17 @@
 from Handlers.ChromeDriverHandler import ChromeDriverHandler
 from Handlers.ElementHandler import ElementHandler
 from Managers.Files.FileManager import FileManager
+from Managers.Timers.BreakManager import BreakManager
 from Bot.DecisionMaker import DecisionMaker
 from Models.User import User
 from Models.Discord import Discord
 from Constants.FilePaths import FilePaths
 
 class Initializer:
+    def initialize_break_manager():
+        playtime = FileManager.get_playtime_before_sleep()
+        return BreakManager(playtime)
+
     def initialize_chrome_driver():
         return ChromeDriverHandler()
     

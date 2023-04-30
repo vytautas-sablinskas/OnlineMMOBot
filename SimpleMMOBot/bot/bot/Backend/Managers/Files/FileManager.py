@@ -38,6 +38,12 @@ class FileManager:
             data=status
         )
 
+    def update_playtime_until_break(playtime):
+        FileHandler.write_into_file(
+            file_path=FilePaths.PLAYTIME_BEFORE_SLEEP.value,
+            data=str(playtime)
+        )
+
     def get_bot_status():
         bot_status_in_array_of_lines = FileHandler.read_from_file_lines(
                 FilePaths.BOT_STATUS.value
@@ -63,6 +69,11 @@ class FileManager:
     def get_session_summary():
         session_summary = FileHandler.read_from_file_lines(FilePaths.SESSION_ACTION_SUMMARY.value)
         return session_summary
+    
+    def get_playtime_before_sleep():
+        playtime_before_sleep_minutes_list = FileHandler.read_from_file_lines(FilePaths.PLAYTIME_BEFORE_SLEEP.value)
+        playtime_before_sleep_minutes = TextHandler.get_user_selected_timers(playtime_before_sleep_minutes_list)
+        return playtime_before_sleep_minutes
 
     def log_text(file_path, message):
         FileHandler.write_into_file(file_path=file_path,

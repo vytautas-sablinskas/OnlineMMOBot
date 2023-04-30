@@ -10,6 +10,16 @@ class DecisionMaker:
         self.next_action = "None"
         self.gathering_action = "None"
 
+    def check_for_break_action(self, break_manager, action_counter):
+        needs_to_take_break = break_manager.check_break_time()
+        if needs_to_take_break:
+            self.next_action = "Time Break"
+            action_counter["Time Breaks"] += 1
+            return True
+        pass
+
+        return False
+
     def check_for_afk_verification_action(self, action_counter):
         confirm_existence_button = ButtonLocator.check_confirm_existence_button_exists(self.element_handler)
         if confirm_existence_button and confirm_existence_button.is_enabled():
@@ -57,7 +67,7 @@ class DecisionMaker:
         
         return False
 
-    def find_next_action(self, logged_in, action_counter):
+    def find_next_action(self, logged_in, action_counter, break_manager):
         needs_to_login = not logged_in
         if needs_to_login:
             self.next_action = "Login"
@@ -65,6 +75,10 @@ class DecisionMaker:
 
         afk_verification_is_next_action = self.check_for_afk_verification_action(action_counter)
         if afk_verification_is_next_action:
+            return
+        
+        break_is_next_action = self.check_for_break_action(break_manager, action_counter)
+        if break_is_next_action:
             return
 
         mob_attack_is_next_action = self.check_for_mob_attack_action(action_counter)

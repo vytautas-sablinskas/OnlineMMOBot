@@ -11,7 +11,7 @@ from Handlers.TextHandler import TextHandler
 def show_action_counts():
     action_lines = FileManager.get_session_summary()
     action_df = TextHandler.split_actions_summary(action_lines)
-    action_df.index = np.arange(1, 9)
+    action_df.index = np.arange(1, 10)
     st.header("Actions done in this session")
     st.table(action_df)
 

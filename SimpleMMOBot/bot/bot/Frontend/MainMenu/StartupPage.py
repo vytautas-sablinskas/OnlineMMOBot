@@ -5,6 +5,7 @@ sys.path.append(backend_dir)
 
 import streamlit as st
 import psutil
+import numpy as np
 import subprocess
 from Managers.Files.FileManager import FileManager
 from Constants.FilePaths import FilePaths
@@ -49,10 +50,17 @@ def get_argument_checkboxes():
     mute_audio = st.checkbox("Mute Audio | Tab will have no audio")
     return headless_mode, mute_audio
 
-def run_bot(email, password, discord_webhook_url, discord_token, chrome_arguments):
+def get_playtime_until_break():
+    playtime_options = np.arange(0, 301)
+    playtime = st.select_slider("Select after how many minutes to take break. If selected 0 - No breaks", options=playtime_options)
+    print(f"first playtime: {playtime}")
+    return playtime
+
+def run_bot(email, password, discord_webhook_url, discord_token, chrome_arguments, playtime):
     FileManager.update_user_credentials(email, password)
     FileManager.update_discord_credentials(discord_webhook_url, discord_token)
     FileManager.update_chrome_arguments(chrome_arguments)
+    FileManager.update_playtime_until_break(playtime)
     
     process = subprocess.Popen(["python", FilePaths.BOT_START.value])
     st.success("Bot successfully started")
@@ -75,8 +83,8 @@ def show_page(script_status):
     
     email_input_box, password_input_box = get_user_credential_input_fields()
     discord_webhook_url_box, discord_token_box = get_discord_credential_input_fields()
-
     headless_mode, mute_audio = get_argument_checkboxes()
+    playtime = get_playtime_until_break()
 
     start_button_place, stop_button_place = st.columns(spec=2, gap="small")
     run_button = start_button_place.button(label="Start bot")
@@ -93,7 +101,7 @@ def show_page(script_status):
             return
 
         chrome_arguments = get_argument_values(headless_mode, mute_audio)
-        process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box, chrome_arguments)
+        process = run_bot(email_input_box, password_input_box, discord_webhook_url_box, discord_token_box, chrome_arguments, playtime)
         script_status="Running"
         FileManager.update_panel_bot_status(script_status)
     

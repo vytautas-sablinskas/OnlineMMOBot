@@ -14,3 +14,4 @@ class FilePaths(Enum):
     BOT_START = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/main.py')
     PANEL_BOT_STATUS = os.path.join(os.getcwd(), 'SimpleMMOBot\\bot\\bot\\Backend\\Files\\Information\\panel_status.txt')
     SESSION_ACTION_SUMMARY = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/session_action_summary.txt')
+    PLAYTIME_BEFORE_SLEEP = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/InitializingBot/playtime_until_break.txt')

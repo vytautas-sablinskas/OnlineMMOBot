@@ -12,6 +12,7 @@ from Managers.Actions.MaterialGatheringManager import MaterialGatheringManager
 
 class ActionController:
     def __init__(self):
+        self.break_manager = Initializer.initialize_break_manager()
         self.user = Initializer.initialize_user_class()
         self.discord = Initializer.initialize_discord_class()
         self.chrome_handler = Initializer.initialize_chrome_driver()
@@ -28,11 +29,12 @@ class ActionController:
             "Catch": 0,
             "Chop": 0,
             "Mine": 0,
-            "AFK Checks": 0
+            "AFK Checks": 0,
+            "Time Breaks": 0
         }
 
     def find_next_action_and_element(self):
-        self.decision_maker.find_next_action(logged_in=self.logged_in, action_counter=self.action_counter)  
+        self.decision_maker.find_next_action(logged_in=self.logged_in, action_counter=self.action_counter, break_manager=self.break_manager)  
         if self.decision_maker.next_action != "None":
                 current_action_in_text = TextHandler.get_current_action_in_text(self.decision_maker.next_action)
                 FileManager.log_text(file_path=FilePaths.ACTION_TRACKING_LOGS.value, 
@@ -45,6 +47,8 @@ class ActionController:
     def execute_next_action(self, next_action, element):
             TimeHandler.sleep_for_random_time(0.3, 0.6)
             match next_action:
+                case "Time Break":
+                    self.break_manager.wait_until_break_time_ends()
                 case "Login":
                     LoginManager.login(
                         chrome_handler=self.chrome_handler, 
