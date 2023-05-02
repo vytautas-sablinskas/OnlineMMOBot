@@ -1,9 +1,9 @@
-Steps Taken: 8
+Steps Taken: 10
 Mobs Attacked: 1
 Grab: 0
 Salvage: 0
 Catch: 0
 Chop: 0
-Mine: 0
+Mine: 1
 AFK Checks: 0
 Time Breaks: 0

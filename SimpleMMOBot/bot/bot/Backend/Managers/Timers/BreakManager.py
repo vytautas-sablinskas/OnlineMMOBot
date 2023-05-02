@@ -24,3 +24,10 @@ class BreakManager:
         highest_time_seconds = 5 * 60
         TimeHandler.sleep_for_random_time(lowest_time_seconds, highest_time_seconds)
         self.timer.reset_timer()
+
+    def wait_for_user_to_resume_script():
+        script_is_paused = True
+        while script_is_paused:
+            bot_status = FileManager.get_bot_status()
+            if bot_status.lower() == "continue":
+                script_is_paused = False

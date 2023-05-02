@@ -15,3 +15,4 @@ class FilePaths(Enum):
     PANEL_BOT_STATUS = os.path.join(os.getcwd(), 'SimpleMMOBot\\bot\\bot\\Backend\\Files\\Information\\panel_status.txt')
     SESSION_ACTION_SUMMARY = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/session_action_summary.txt')
     PLAYTIME_BEFORE_SLEEP = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/InitializingBot/playtime_until_break.txt')
+    ITEMS_FOUND_BY_RARITY = os.path.join(os.getcwd(), 'SimpleMMOBot/bot/bot/Backend/Files/Information/Items/{}s.txt') 

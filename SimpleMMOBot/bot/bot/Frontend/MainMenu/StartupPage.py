@@ -53,7 +53,6 @@ def get_argument_checkboxes():
 def get_playtime_until_break():
     playtime_options = np.arange(0, 301)
     playtime = st.select_slider("Select after how many minutes to take break. If selected 0 - No breaks", options=playtime_options)
-    print(f"first playtime: {playtime}")
     return playtime
 
 def run_bot(email, password, discord_webhook_url, discord_token, chrome_arguments, playtime):

@@ -45,6 +45,10 @@ class TextHandler:
         
         return "Pause"
     
+    def format_action_tracking_logs(tracking_logs):
+        #to implement
+        pass
+
     @staticmethod
     def get_current_action_in_text(next_action):
         max_width = len("Gather Materials")

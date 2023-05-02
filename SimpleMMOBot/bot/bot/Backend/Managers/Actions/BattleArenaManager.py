@@ -1,0 +1,2 @@
+class BattleArenaManager:
+    pass

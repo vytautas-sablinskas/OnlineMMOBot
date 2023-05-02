@@ -44,6 +44,21 @@ class FileManager:
             data=str(playtime)
         )
 
+    def update_item_count(file_path, item_name, new_count):
+        found_item = False
+        lines = FileHandler.read_from_file_lines(file_path)
+        for i in range(len(lines)):
+            if item_name in lines[i]:
+                lines[i] = f"{item_name}: {new_count}\n"
+                found_item = True
+                break
+
+        if not found_item:
+            lines.append(f"{item_name}: {new_count}\n")
+
+        lines = [line.strip() for line in lines]
+        FileHandler.write_into_file(file_path, lines)
+
     def get_bot_status():
         bot_status_in_array_of_lines = FileHandler.read_from_file_lines(
                 FilePaths.BOT_STATUS.value

@@ -15,5 +15,9 @@ class Expressions(Enum):
     LINK_TO_GATHERING_PAGE = "//button[contains(text(), '{}')]"
     GATHER_BUTTON = "crafting_button"
     GATHERING_LEVEL_TOO_LOW = "//small[contains(text(), \"Your skill level isn't high enough\")]"
+    ENERGY_POINTS = "//span[@x-text='user.energy']"
+    QUESTION_POINTS = "//span[@x-text='user.quest_points']"
+    YOU_HAVE_FOUND_AN_ITEM = "//span[text()='You have found an item!']"
+    ITEM = "//span[@class='{}']"
     
 

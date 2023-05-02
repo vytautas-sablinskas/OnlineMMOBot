@@ -8,18 +8,22 @@ from Managers.Authentication.LoginManager import LoginManager
 from Managers.Actions.VerificationManager import VerificationManager
 from Managers.Actions.StepManager import StepManager
 from Managers.Actions.MobAttackManager import MobAttackManager
+from Managers.Actions.ItemManager import ItemManager
 from Managers.Actions.MaterialGatheringManager import MaterialGatheringManager
 
 class ActionController:
     def __init__(self):
+        self.item_manager = Initializer.initialize_item_manager()
         self.break_manager = Initializer.initialize_break_manager()
         self.user = Initializer.initialize_user_class()
         self.discord = Initializer.initialize_discord_class()
         self.chrome_handler = Initializer.initialize_chrome_driver()
         self.element_handler = Initializer.initialize_element_handler(
-            self.chrome_handler.driver)
+            self.chrome_handler.driver
+        )
         self.decision_maker = Initializer.initialize_decision_maker(
-            self.element_handler)
+            self.element_handler
+        )
         self.logged_in = False
         self.action_counter = {
             "Steps Taken": 0,
@@ -35,14 +39,20 @@ class ActionController:
 
     def find_next_action_and_element(self):
         self.decision_maker.find_next_action(logged_in=self.logged_in, action_counter=self.action_counter, break_manager=self.break_manager)  
-        if self.decision_maker.next_action != "None":
-                current_action_in_text = TextHandler.get_current_action_in_text(self.decision_maker.next_action)
-                FileManager.log_text(file_path=FilePaths.ACTION_TRACKING_LOGS.value, 
-                                     message=current_action_in_text
-                )
-                FileHandler.write_into_file_with_hashmap(file_path=FilePaths.SESSION_ACTION_SUMMARY.value,
-                                            hashmap=self.action_counter)
-                print(current_action_in_text)
+        next_action = self.decision_maker.next_action
+        if next_action == "None":
+             return
+
+        next_action_formatted = TextHandler.get_current_action_in_text(next_action)
+        FileManager.log_text(
+            file_path=FilePaths.ACTION_TRACKING_LOGS.value, 
+            message=next_action_formatted
+        )
+        FileHandler.write_into_file_with_hashmap(
+            file_path=FilePaths.SESSION_ACTION_SUMMARY.value,
+            hashmap=self.action_counter
+        )
+        print(next_action_formatted)
 
     def execute_next_action(self, next_action, element):
             TimeHandler.sleep_for_random_time(0.3, 0.6)
@@ -62,6 +72,16 @@ class ActionController:
                         chrome_handler=self.chrome_handler,
                         element_handler=self.element_handler,
                         discord_model=self.discord
+                    )
+                case "Add Item To List":
+                    item_rarity = element.get_attribute('class')
+                    item_name = element.text
+
+                    self.item_manager.add_item_by_rarity(
+                        item_rarity=item_rarity,
+                        item_to_append=item_name,
+                        chrome_handler = self.chrome_handler, 
+                        element_handler = self.element_handler
                     )
                 case "Step":
                     StepManager.take_steps(take_step_page=element)
@@ -83,8 +103,11 @@ class ActionController:
 
 
     def take_action_depending_on_current_screen(self):
+        self.discord.send_message_to_discord_server("Starting running bot")
         user_wants_bot_to_run = True
         while user_wants_bot_to_run:
             self.find_next_action_and_element()
-            self.execute_next_action(next_action=self.decision_maker.next_action,
-                                     element=self.decision_maker.element)
+            self.execute_next_action(
+                next_action=self.decision_maker.next_action,
+                element=self.decision_maker.element
+            )

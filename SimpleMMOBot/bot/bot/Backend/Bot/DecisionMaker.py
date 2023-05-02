@@ -56,6 +56,41 @@ class DecisionMaker:
                 return True
 
         return False   
+    
+    def check_for_battle_arena_action(self, action_counter):
+        energy_points_span = ButtonLocator.check_energy_points_span(self.element_handler)
+        if energy_points_span == None:
+            #print("Energy points not found")
+            return
+
+        energy_points = energy_points_span.text
+        #print(f"Energy level is {energy_points}")
+
+    def check_for_question_action(self, action_counter):
+        question_points_span = ButtonLocator.check_energy_points_span(self.element_handler)
+        if question_points_span == None:
+            #print("Question points not found")
+            return
+        
+        question_points = question_points_span.text
+        #print(f"I have {question_points} question points")
+
+    def check_for_item_found(self, action_counter):
+        item_rarity_classes = ["common-item", "uncommon-item", "rare-item", "elite-item", "epic-item", "legendary-item", "celestial-item", "exotic-item"]
+        item_was_found_span = ButtonLocator.check_item_found_span(self.element_handler)
+        if item_was_found_span == None:
+            return False
+        
+        for item_rarity in item_rarity_classes:
+            item_span = ButtonLocator.check_item_span(self.element_handler, item_rarity)
+            if item_span == None:
+                continue
+
+            self.next_action = "Add Item To List"
+            self.element = item_span
+            return True
+        
+        return False
 
     def check_for_taking_a_step_action(self, action_counter):
         take_step_button = ButtonLocator.check_take_a_step_button_exists(self.element_handler)
@@ -68,6 +103,9 @@ class DecisionMaker:
         return False
 
     def find_next_action(self, logged_in, action_counter, break_manager):
+        self.check_for_question_action(action_counter)
+        self.check_for_battle_arena_action(action_counter)
+
         needs_to_login = not logged_in
         if needs_to_login:
             self.next_action = "Login"
@@ -79,6 +117,10 @@ class DecisionMaker:
         
         break_is_next_action = self.check_for_break_action(break_manager, action_counter)
         if break_is_next_action:
+            return
+        
+        add_item_is_next_action = self.check_for_item_found(action_counter)
+        if add_item_is_next_action:
             return
 
         mob_attack_is_next_action = self.check_for_mob_attack_action(action_counter)

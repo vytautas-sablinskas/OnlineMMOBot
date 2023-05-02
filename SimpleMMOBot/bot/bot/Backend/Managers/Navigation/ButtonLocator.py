@@ -127,3 +127,43 @@ class ButtonLocator:
         )
 
         return take_a_step_button
+    
+    def check_energy_points_span(element_handler):
+        energy_points_locator = By.XPATH
+        energy_points_expression = Expressions.ENERGY_POINTS.value
+        energy_points_span = element_handler.find_element(
+            locator_type=energy_points_locator,
+            expression_type=energy_points_expression
+        )
+
+        return energy_points_span
+    
+    def check_question_points_span(element_handler):
+        question_points_locator = By.XPATH
+        question_points_expression = Expressions.QUESTION_POINTS.value
+        question_points_span = element_handler.find_element(
+            locator_type=question_points_locator,
+            expression_type=question_points_expression
+        )
+
+        return question_points_span
+    
+    def check_item_found_span(element_handler):
+        item_found_locator = By.XPATH
+        item_found_expression = Expressions.YOU_HAVE_FOUND_AN_ITEM.value
+        item_found_span = element_handler.find_element(
+            locator_type=item_found_locator,
+            expression_type=item_found_expression
+        )
+
+        return item_found_span
+    
+    def check_item_span(element_handler, rarity):
+        item_locator = By.XPATH
+        item_expression = Expressions.ITEM.value.format(rarity)
+        item_span = element_handler.find_element(
+            locator_type=item_locator,
+            expression_type=item_expression
+        )
+
+        return item_span
