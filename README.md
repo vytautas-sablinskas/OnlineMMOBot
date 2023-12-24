@@ -10,6 +10,9 @@ The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.s
 
 ## Features
 
+### Dependency Handler
+- **Installation of Dependencies** Automatic installation of necessary dependencies upon game launch
+
 ### Frontend
 - **Intuitive Interface:** Easy setup for Chrome options and account/discord credentials.
 - **Progress Tracking:** Monitor the bot's activities and progress in real-time.
@@ -30,8 +33,7 @@ The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.s
 
 ### Installation
 1. Clone this repository.
-2. Install required packages from `import_requirements.txt`.
-3. Navigate to the main folder.
+2. Navigate to the main folder.
 
 ### Usage
 1. Launch the project.

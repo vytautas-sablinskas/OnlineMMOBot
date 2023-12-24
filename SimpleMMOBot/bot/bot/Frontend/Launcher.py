@@ -13,6 +13,6 @@ def lauch_bot_panel():
     os.system(f"streamlit run {panel_path}")
 
 if __name__ == "__main__":
-    #DependencyHandler.check_dependencies()
+    DependencyHandler.check_dependencies()
     FileHandler.write_into_file(FilePaths.PANEL_BOT_STATUS.value, "Stopped")
     lauch_bot_panel()
