@@ -9,23 +9,26 @@ class ChromeDriverHandler:
     def __init__(self):
         self.driver = self.start_driver()
 
-    def add_arguments(self, driver, arguments):
+    def add_arguments(self, options, arguments):
         no_arguments_to_add = not arguments
         if no_arguments_to_add:
             return
 
         for argument in arguments:
-            driver.options.add_argument(argument)
+            options.add_argument(argument)
 
     def start_driver(self):
         profile = profiles.Windows()
         options = ChromeOptions()
-        driver = Chrome(profile, options=options, uc_driver=False)
-        chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS.value, delimiter='\n')
-        self.add_arguments(driver, chrome_driver_arguments)
 
-        driver = driver.start()
+        options.add_argument('--auto-open-devtools-for-tabs')
+        chrome_driver_arguments = FileHandler.get_array_from_file(FilePaths.CHROME_ARGUMENTS.value, delimiter='\n')
+        self.add_arguments(options, chrome_driver_arguments)
+        
+        driver = Chrome(profile, options=options, uc_driver=False)
+        driver.start_client()
         driver.get(WebsitePaths.LOGIN_PAGE.value)
+
         return driver
     
     def go_to_page(self, location, element_handler, expected_condition, locator_type, expression_type):
