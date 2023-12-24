@@ -1,44 +1,39 @@
-# SimpleMMO Bot
 
-The SimpleMMO Bot is a tool that automates various actions in the game [SimpleMMO](https://web.simple-mmo.com), making it easier to progress through the game. The bot has both a frontend and a backend component, allowing for easy customization and control.
+# Online MMO Bot
+
+## Introduction
+The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.simple-mmo.com).
+
+## Project Goals
+- **Apply Single Responsibility Principle:** Each module of the bot is developed with a focus on maintaining a single responsibility, ensuring clean, maintainable, and scalable code.
+- **Learn Selenium Usage:** Utilizing Selenium for browser automation to interact with the Online MMO game, enhancing skills in web scraping and automation.
 
 ## Features
 
 ### Frontend
-
-The frontend component of the bot includes:
-
-- A user-friendly interface for setting up the bot's Chrome options and entering your SimpleMMO account/Discord credentials.
-- A progress tracker to see the bot's current session progress.
+- **Intuitive Interface:** Easy setup for Chrome options and account/discord credentials.
+- **Progress Tracking:** Monitor the bot's activities and progress in real-time.
 
 ### Backend
-
-The backend component of the bot includes:
-
-- Ability to attack mobs in the game.
-- Ability to gather resources (mining, chopping wood, catching fish, salvaging and grabbing materials).
-- Automatic dependency checking and installation on launch.
+- **Automated Gameplay:** Includes attacking, resource gathering of all types, and other in-game actions.
+- **Efficient and Reliable:** Optimized for consistent and effective game progression.
 
 ### Discord Integration
-
-The bot includes Discord integration, allowing for seamless communication with a Discord server:
-
-- Sends a message to the configured Discord server whenever an AFK check is detected in the game.
-- Allows users to continue the bot's actions after responding to an AFK check by simply writing "!continue" in the Discord server.
+- **AFK Check Notifications:** Alerts sent to a Discord server for AFK checks.
+- **Interactive Bot Control:** Resume bot actions via Discord commands after completing AFK check.
 
 ## Getting Started
 
-To get started with the SimpleMMO Bot, you'll need:
-
+### Prerequisites
 - Python 3.x
 - Google Chrome
 
-To install and use the bot:
+### Installation
+1. Clone this repository.
+2. Install required packages from `import_requirements.txt`.
+3. Navigate to the main folder.
 
-1. Clone this repository to your local machine.
-2. VSCode has already Launcher settings. Without it open terminal and navigate to the mmo-automation directory.
-3. Run python 'SimpleMMOBot\bot\bot\Frontend\Launcher.py' file
-4. Wait until the GUI is opened.
-5. Enter your SimpleMMO account/Discord credentials in the frontend interface.
-6. Configure the Chrome options to your preferences.
-7. Click "Start Bot" to begin automating actions in the game.
+### Usage
+1. Launch the project.
+2. Enter your SimpleMMO and Discord credentials, including the webhook URL and token.
+3. Click 'Start Bot' to begin automation.
