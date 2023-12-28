@@ -1,5 +1,6 @@
 
 # Online MMO Bot
+Bot is **OUTDATED**, verification to website and login has to be done manually.
 
 ## Introduction
 The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.simple-mmo.com).
@@ -28,7 +29,7 @@ The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.s
 ## Getting Started
 
 ### Prerequisites
-- Python 3.x
+- Python 3.1
 - Google Chrome
 
 ### Installation
