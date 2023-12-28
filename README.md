@@ -1,6 +1,6 @@
 
 # Online MMO Bot
-Bot is **OUTDATED**, verification to website and login has to be done manually.
+Bot is **OUTDATED**, verification to the website and login has to be done manually.
 
 ## Introduction
 The MMO Bot is an automated tool designed for the game [SimpleMMO](https://web.simple-mmo.com).
